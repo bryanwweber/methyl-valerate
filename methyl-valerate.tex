@@ -1,4 +1,4 @@
-\documentclass[letterpaper,review]{elsarticle}
+\documentclass[letterpaper, review]{elsarticle}
 
 \journal{Fuel}
 
@@ -151,16 +151,16 @@ random scatter present in the data, the standard deviation \((\sigma)\) of the i
 the runs at a given condition is computed. In all cases, \(\sigma\) is less than \SI{10}{\percent}
 of the mean value of the overall ignition delay.
 
-\begin{figure}
-    \centering
-    \resizebox{\linewidth}{!}{\input{figures/ignition_delay_definition.pgf}}
+\begin{center}
+    \captionsetup{type=figure}
+    \includegraphics{figures/ignition_delay_definition.pdf}
     \caption{Definition of the ignition delays used in this work. The
     experiment in this figure was conducted for a \(\phi=2.0\) mixture with
-    \mbox{\(\ce{Ar}/(\ce{N2}+\ce{AR})=0.5\)}, \(P_0=\SI{0.7694}{\bar}\),
-    \(T_0=\SI{373}{\K}\), \(P_C=\SI{14.94}{\bar}\), \(T_C=\SI{723}{\K}\),
-    \(\tau=\SI{27.44\pm0.99}{\ms}\), \(\tau_1=\SI{16.57\pm0.48}{\ms}\).}
+    \mbox{\(\ce{Ar}/(\ce{N2}+\ce{AR})=0.5\)}, \(P_0=\SI{0.7806}{\bar}\),
+    \(T_0=\SI{373}{\K}\), \(P_C=\SI{14.92}{\bar}\), \(T_C=\SI{720}{\K}\),
+    \(\tau=\SI{27.56\pm0.89}{\ms}\), \(\tau_1=\SI{16.60\pm0.46}{\ms}\).}
     \label{fig:ign-delay-def}
-\end{figure}
+\end{center}
 
 In addition to the reactive experiments, non-reactive experiments are conducted to determine the
 influence of machine-specific behavior on the experimental conditions and permit the calculation of
@@ -186,8 +186,8 @@ and \ce{N2} are added manometrically at room temperature and the total pressure 
 Omega Engineering MMA type static pressure transducer. The same transducer is used to measure the
 pressure of the reactants prior to an experiment.
 
-\begin{table}
-    \centering
+\begin{center}
+    \captionsetup{type=table}
     \caption{Mixtures considered in this work}
     \begin{tabular}{Sccccc}
         \toprule
@@ -204,7 +204,7 @@ pressure of the reactants prior to an experiment.
         \bottomrule
     \end{tabular}
     \label{tab:mixtures}
-\end{table}
+\end{center}
 
 The RCM is equipped with heaters to control the initial temperature of the mixture. After filling in
 the components to the mixing tanks, the heaters are switched on and the system is allowed
@@ -231,17 +231,17 @@ values for the coefficients computed in this work and in the literature works ar
 \cref{tab:antoine}. The data used to calculate the coefficients are provided in the Supplementary
 Material.
 
-\begin{figure}
-    \centering
-    \resizebox{\linewidth}{!}{\input{figures/vapor_pressure.pgf}}
+\begin{center}
+    \captionsetup{type=figure}
+    \input{figures/vapor_pressure.pgf}
     \caption{Saturated vapor pressure of MV as a function of temperature,
     plotted using the Antoine equation, \cref{eq:antoine}, with
     \(A=6.4030\), \(B=1528.69\), and \(C=52.881\).}
     \label{fig:vapor-pressure}
-\end{figure}
+\end{center}
 
-\begin{table}
-    \centering
+\begin{center}
+    \captionsetup{type=table}
     \caption{Antoine Equation coefficients computed in this work and from the
     literature. The $2\sigma$ confidence interval is estimated by taking the
     square root of the diagonals of the covariance matrix returned from
@@ -253,12 +253,12 @@ Material.
         \midrule
         This Work & 6.4030 & 1528.69 & 52.881 & 274.9 & 417.18 \\
         $2\sigma$ Confidence Interval & 0.0919 & 53.47 & 4.934 & --- & --- \\
-        \cite{Ortega2003} & 6.23175 & 1429.00 & 62.30 & 364.75 & 417.18 \\
-        \cite{Camacho2007} & 5.9644 & 1281.06 & 75.94 & 281 & 547 \\
-        \cite{Stephenson1987} & 6.62646 & 1658.4 & 42.09 & 297 & 411 \\
+        \citet{Ortega2003} & 6.23175 & 1429.00 & 62.30 & 364.75 & 417.18 \\
+        \citet{Camacho2007} & 5.9644 & 1281.06 & 75.94 & 281 & 547 \\
+        \citet{Stephenson1987} & 6.62646 & 1658.4 & 42.09 & 297 & 411 \\
         \bottomrule
     \end{tabular}
-\end{table}
+\end{center}
 
 \section{Computational Methods}\label{sec:computational-methods}
 \subsection{RCM Modeling}\label{sec:experimental-modeling}
@@ -327,7 +327,7 @@ region of ignition delay at \SI{15}{\bar} from approximately
 
 \begin{figure}[htb]
     \centering
-    \input{figures/ignition-delays.pgf}
+    \resizebox{\linewidth}{!}{\input{figures/ignition-delays.pgf}}
     \caption{Ignition delays of MV as a function of inverse temperature. Filled
     points are the overall ignition delays and hollow points are the first stage
     ignition delays. a) \SI{15}{\bar}. b) \SI{30}{\bar}}
