@@ -302,69 +302,62 @@ the model is available in the Supplementary Material.
 
 \section{Experimental Results}\label{sec:experimental-results}
 
-\Cref{fig:ignition-delays} shows the ignition delay results measured in this
-study. Filled markers denote the overall ignition delay and hollow markers
-indicate the first-stage ignition delay. Vertical error bars are drawn on the
-symbols to represent the uncertainty in the ignition delay; for many of the
-experiments, the uncertainty is approximately the same size as the data point,
-so the error bar is hidden. Horizontal error bars are shown on the first and
-last points of each equivalence ratio indicating the estimated uncertainty in
-the EOC temperature of $\pm\SI{1}{\percent}$~\cite{Weber2015}.
-\cref{fig:ignition-delays}a shows the results for a compressed pressure of
-\SI{15}{\bar}, while \cref{fig:ignition-delays}b shows the results for a
-compressed pressure of \SI{30}{\bar}. Note that $\phi=2.0$ results were not
-collected for \SI{30}{\bar}, so there are no red data points in
-\cref{fig:ignition-delays}b.
+\Cref{fig:ignition-delays} shows the ignition delay results measured in this study. Filled markers
+denote the overall ignition delay and hollow markers indicate the first-stage ignition delay.
+Vertical error bars are drawn on the symbols to represent the uncertainty in the ignition delay; for
+many of the experiments, the uncertainty is approximately the same size as the data point, so the
+error bar is hidden. Horizontal error bars are shown on the first and last points of each
+equivalence ratio indicating the estimated uncertainty in the EOC temperature of
+$\pm\SI{1}{\percent}$~\cite{Weber2015}. \cref{fig:ignition-delays}a shows the results for a
+compressed pressure of \SI{15}{\bar}, while \cref{fig:ignition-delays}b shows the results for a
+compressed pressure of \SI{30}{\bar}. Note that $\phi=2.0$ results were not collected for
+\SI{30}{\bar}, so there are no red data points in \cref{fig:ignition-delays}b.
 
-It can be seen from \cref{fig:ignition-delays} that the ignition delays for the
-\(\phi=0.25\text{ and } 0.5\) mixtures do not show an NTC region of the ignition
-delay for both of the pressures studied in this work. However, the $\phi=1.0$
-mixture shows an NTC region at $P_C=\SI[number-unit-product={\ }]{30}{\bar}$
-between approximately \SIlist{720;800}{\K}, with measured first-stage ignition
-delays at \SIlist{734;757}{\K}. In addition, the $\phi=2.0$ mixture shows an NTC
-region of ignition delay at \SI{15}{\bar} from approximately
-\SIrange{720}{775}{\K}, with measured first-stage ignition delays between
-\SIlist{720;750}{\K}.
+It can be seen from \cref{fig:ignition-delays} that the ignition delays for the \(\phi=0.25\text{
+and } 0.5\) mixtures do not show an NTC region of the ignition delay for both of the pressures
+studied in this work. However, the $\phi=1.0$ mixture shows an NTC region at
+$P_C=\SI[number-unit-product={\ }]{30}{\bar}$ between approximately \SIlist{720;800}{\K}, with
+measured first-stage ignition delays at \SIlist{733;757}{\K}. In addition, the $\phi=2.0$ mixture
+shows an NTC region of ignition delay at \SI{15}{\bar} from approximately \SIrange{720}{780}{\K},
+with measured first-stage ignition delays between \SIlist{720;750}{\K}.
 
-\begin{figure}[htb]
-    \centering
-    \resizebox{\linewidth}{!}{\input{figures/ignition-delays.pgf}}
+\begin{center}
+    \captionsetup{type=figure}
+    \includegraphics{figures/ignition-delays.pdf}
     \caption{Ignition delays of MV as a function of inverse temperature. Filled
     points are the overall ignition delays and hollow points are the first stage
     ignition delays. a) \SI{15}{\bar}. b) \SI{30}{\bar}}
     \label{fig:ignition-delays}
-\end{figure}
+\end{center}
 
-\Cref{fig:pressure-traces} shows the pressure traces for selected experiments at
-\(\phi=1.0\), \(P_C =\SI[number-unit-product={\ }]{30}{\bar}\). The three
-reactive pressure traces shown are at the low-temperature end of the NTC (blue,
-\SI{700}{\K}), one case with two-stage ignition (orange, \SI{734}{\K}), and one
-case near the high-temperature limit of the NTC region (green, \SI{775}{\K}).
-Also shown is the non-reactive pressure trace for the \SI{700}{\K} case (red).
-By comparing the \SI{700}{\K} pressure trace with the non-reactive pressure
-trace, it can be seen that there is substantial heat release prior to main
-ignition as measured by the deviation of the reactive pressure trace from the
-non-reactive trace. However, there is only one peak in the time derivative of
-the pressure, so no first-stage ignition delay is defined for this case. It can
-also be seen in \cref{fig:pressure-traces} that the \SI{775}{\K} case shows some
-heat release prior to ignition, although again there is only one peak in the
-time derivative of the pressure. Furthermore, the heat release at \SI{775}{\K}
-appears to be more gradual than at the lowest temperature.
+\Cref{fig:pressure-traces}a shows the pressure traces for selected experiments at \(\phi=1.0\),
+\(P_C =\SI[number-unit-product={\ }]{30}{\bar}\). The three reactive pressure traces shown are at
+the low-temperature end of the NTC (blue, \SI{700}{\K}), one case with two-stage ignition (orange,
+\SI{733}{\K}), and one case near the high-temperature limit of the NTC region (green, \SI{774}{\K}).
+Also shown is the non-reactive pressure trace for the \SI{700}{\K} case (red). By comparing the
+\SI{700}{\K} pressure trace with the non-reactive pressure trace, it can be seen that there is
+substantial heat release prior to main ignition as measured by the deviation of the reactive
+pressure trace from the non-reactive trace. However, there is only one peak in the time derivative
+of the pressure, so no first-stage ignition delay is defined for this case. It can also be seen in
+\cref{fig:pressure-traces}a that the \SI{775}{\K} case shows some heat release prior to ignition,
+although again there is only one peak in the time derivative of the pressure. Furthermore, the heat
+release at \SI{775}{\K} appears to be more gradual than at the lowest temperature.
 
-\begin{figure}[htb]
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        \resizebox{\linewidth}{!}{\input{figures/pressure-traces.pgf}}
-        \caption{Selected pressure traces around the NTC region of ignition delay for $\phi=1.0$}
-        \label{fig:pressure-traces}
-    \end{minipage}\hfill%
-    \begin{minipage}[t]{0.48\textwidth}
-        \centering
-        \resizebox{\linewidth}{!}{\input{figures/simulation-comparison.pgf}}
-        \caption{Comparison of experimental and simulated results for $\phi=1.0$}
-        \label{fig:simulation-comparison}
-    \end{minipage}
-\end{figure}
+\begin{center}
+    \captionsetup{type=figure}
+    \includegraphics[width=\textwidth]{figures/pressure-traces.pdf}
+    \caption{Selected pressure traces around the NTC region of ignition delay.
+    a) \(\phi=1.0\) b) \(\phi=2.0\)}
+    \label{fig:pressure-traces}
+    % \begin{minipage}[t]{0.48\textwidth}
+    %     \centering
+    %     \resizebox{\linewidth}{!}{\input{figures/simulation-comparison.pgf}}
+    %     \caption{Comparison of experimental and simulated results for $\phi=1.0$}
+    %     \label{fig:simulation-comparison}
+    % \end{minipage}
+\end{center}
+
+A similar trend can be observed in \cref{fig:pressure-traces}b for \(\phi=2.0\) at \(
 
 \section{Computational Results}\label{sec:computational-results}
 
