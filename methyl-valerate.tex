@@ -221,15 +221,16 @@ tank. The Antoine equation
 %
 is used to model the saturated vapor pressure of MV as a function of temperature, where \(A\),
 \(B\), and \(C\) are substance-specific coefficients. Coefficients for \cref{eq:antoine} are given
-in the literature by~\citet{Ortega2003}, \citet{Camacho2007}, and \citet{Stephenson1987};
-unfortunately, the values of the coefficients are different among all three authors. Therefore,
-coefficients for use in \cref{eq:antoine} are determined in this work by least squares fitting of
-the data of \citet{Ortega2003}, \citet{vanGenderen2002}, and \citet{Verevkin2008} using the
-\verb|curve_fit()| function of SciPy~\cite{Jones2001} version 0.19.0. \Cref{fig:vapor-pressure}
-shows that the coefficients fit with this procedure give good agreement with the experimental data;
-values for the coefficients computed in this work and in the literature works are given in
-\cref{tab:antoine}. The data used to calculate the coefficients are provided in the Supplementary
-Material.
+in the literature by~\citet{Ortega2003}, \citet{Camacho2007}, and~\citet{Stephenson1987}.
+Unfortunately, the values of the coefficients are different among all three authors and, more
+importantly, the temperature ranges provided in those three fits do not cover the entire range of
+interest for this study. Therefore, coefficients for use in \cref{eq:antoine} are determined in this
+work by least squares fitting of the data of \citet{Ortega2003}, \citet{vanGenderen2002}, and
+\citet{Verevkin2008} using the \verb|curve_fit()| function of SciPy~\cite{Jones2001} version 0.19.0.
+\Cref{fig:vapor-pressure} shows that the coefficients fit with this procedure give good agreement
+with the experimental data; values for the coefficients computed in this work and in the literature
+works are given in \cref{tab:antoine}. The data used to calculate the coefficients are provided in
+the Supplementary Material.
 
 \begin{center}
     \captionsetup{type=figure}
