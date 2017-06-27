@@ -287,7 +287,7 @@ thermodynamic database with multiple data entries. For most of these species the
 is identical. However, some species are not exact duplicates. For these species, it is not clear
 from the thermodynamic database file which data set should be preferred. Since Cantera (and CHEMKIN)
 choose the first instance of a duplicate species to be used, we retained the first entry for all
-duplicated species. The detailed \cite{Dievart2013} model includes \todo{check this}1103 species and 7557 reactions,
+duplicated species. The detailed \cite{Dievart2013} model includes 1105 species and 7141 reactions,
 and the CHEMKIN and Cantera formatted input files are available in the Supplementary Material.
 
 \subsection{Reaction Mechanism Generator}\label{sec:reaction-mechanism-generator}
@@ -295,10 +295,10 @@ and the CHEMKIN and Cantera formatted input files are available in the Supplemen
 In addition to using a mechanism from the literature, we investigate the use of an automatic
 mechanism generator, the open-source Reaction Mechanism Generator (RMG)~\cite{Allen2012} version
 2.1.0. The Python version of RMG is used, which requires Python 2.7, and version 2.1.0 of the RMG
-database is used. The final RMG model contains 483 species and 19990 reactions. Note that the number
-of species is much lower than the \cite{Dievart2013} model because the RMG model focuses on only one
-fuel (MV), but the number of reactions is substantially higher. The input file used to generate the
-model is available in the Supplementary Material.
+database is used. The final RMG model contains 427 species and 13640 reactions. Note that the number
+of species is much lower than the \citet{Dievart2013} model because the RMG model focuses on only
+one fuel (MV), but the number of reactions is substantially higher. The input file used to generate
+the model is available in the Supplementary Material.
 
 \section{Experimental Results}\label{sec:experimental-results}
 
