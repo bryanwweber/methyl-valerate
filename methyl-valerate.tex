@@ -349,12 +349,6 @@ release at \SI{775}{\K} appears to be more gradual than at the lowest temperatur
     \caption{Selected pressure traces around the NTC region of ignition delay.
     a) \(\phi=1.0\) b) \(\phi=2.0\)}
     \label{fig:pressure-traces}
-    % \begin{minipage}[t]{0.48\textwidth}
-    %     \centering
-    %     \resizebox{\linewidth}{!}{\input{figures/simulation-comparison.pgf}}
-    %     \caption{Comparison of experimental and simulated results for $\phi=1.0$}
-    %     \label{fig:simulation-comparison}
-    % \end{minipage}
 \end{center}
 
 A similar trend can be observed in \cref{fig:pressure-traces}b for \(\phi=2.0\) at
@@ -369,22 +363,42 @@ from the non-reactive case.
 \section{Computational Results}\label{sec:computational-results}
 
 \Cref{fig:simulation-comparison} compares experimentally measured overall ignition delays with
-ignition delays computed with the detailed model of \citet{Dievart2013} for the \(\phi=1.0\)
-experiments. Results for the other equivalence ratios are similar to these results, so are not shown
-here. It is important to note that the model of \citet{Dievart2013} was not validated for MV
-ignition delays, only for extinction strain rates. At \SI{15}{\bar}, the model tends to
-under-predict the ignition delay and predicts an NTC region that is not present in the experiments.
-At \SI{30}{\bar}, the model predicts the low-temperature ignition delays well, but does not predict
-the NTC region found experimentally.
+ignition delays computed with the detailed model of \citet{Dievart2013} (solid lines).
+\Cref{fig:simulation-comparison}a shows results at \(P_C = \SI{15}{\bar}\), while
+\cref{fig:simulation-comparison}b shows results at \(P_C = \SI{30}{\bar}\). Only some equivalence
+ratios are shown for each pressure condition; data and simulated results are not shown for cases
+where the reactive simulated temperature at the EOC deviated substantially from the non-reactive
+temperature due to heat release during the compression stroke. Furthermore, it is important to note
+that the model of \citet{Dievart2013} was not validated for MV ignition delays, only for extinction
+strain rates.
 
-To understand the underlying reasons for the disagreement between the
-\cite{Dievart2013} model and the data, we constructed an additional model
-using RMG (see \cref{sec:reaction-mechanism-generator}). As can be seen in
-\cref{fig:simulation-comparison}, the agreement between the RMG model and the
-experimental data is similar to the \cite{Dievart2013} model for the
-\SI{30}{\bar} data. At \SI{15}{\bar}, the RMG model predicts a somewhat longer
-ignition delay than the model of \cite{Dievart2013}, but still predicts an
-NTC region where none is present in the experimental data.
+\begin{center}
+    \captionsetup{type=figure}
+    \resizebox{\textwidth}{!}{\input{figures/simulation-comparison.pgf}}
+    \caption{Comparison of experimental and simulated results. a) \SI{15}{\bar}; b) \SI{30}{\bar}}
+    \label{fig:simulation-comparison}
+\end{center}
+
+At \SI{15}{\bar}, the experimental ignition delays are under-predicted by the \citet{Dievart2013}
+model for the three equivalence ratios shown. For the \(\phi =\) \numlist{0.25;0.5} conditions, the
+model appears to be predicting an NTC region of the ignition delays as the temperature decreases,
+although such a trend is not observed in the data. However, at \(\phi = 2.0\), the model does not
+predict the presence of an NTC region, although one is present in the experiments. Nonetheless, the
+agreement seems to be improving as the temperature is decreased. Comparing the \citet{Dievart2013}
+model to the data at \SI{30}{\bar}, we find a similar trend as the \(\phi=2.0,\ P_C=\SI{15}{\bar}\)
+data. The model does not predict the NTC region found experimentally for the \(\phi = 1.0\)
+experiments, but the agreement improves as the temperature decreases.
+
+To elucidate the underlying reasons for the disagreement between the \citet{Dievart2013} model and
+the data, we constructed an additional model using RMG (see
+\cref{sec:reaction-mechanism-generator}). As can be seen in \cref{fig:simulation-comparison}a, the
+agreement between the RMG model (dashed lines) and the experimental data is similar to the
+\citet{Dievart2013} model for the \SI{15}{\bar}, \(\phi =\) \numlist{0.25; 0.5} data. Moreover, the
+RMG model predicts a similar NTC region as temperature is decreasing. For the \SI{15}{\bar},
+\(\phi = 2.0\) data, the RMG model tends to over-predict the low-temperature ignition delays, and
+does not predict the NTC region found experimentally. As before, the trend at \SI{30}{\bar},
+\(\phi=1.0\) is similar to the \SI{15}{\bar}, \(\phi=2.0\) data; the RMG model over-predicts the
+low-temperature ignition delays and does not predict the experimental NTC region.
 
 In general, there could be three likely sources of error in the models: missing
 reaction pathways, incorrect values of the reaction rates, and incorrect values
