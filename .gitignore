@@ -1,5 +1,6 @@
 .ipynb_checkpoints
 Exported\ Items.bib
+.~lock*
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
