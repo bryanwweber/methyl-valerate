@@ -301,6 +301,7 @@ one fuel (MV), but the number of reactions is substantially higher. The input fi
 the model is available in the Supplementary Material.
 
 \section{Experimental Results}\label{sec:experimental-results}
+\subsection{Ignition Delays}\label{sec:ignition-delays}
 
 \Cref{fig:ignition-delays} shows the ignition delay results measured in this study. Filled markers
 denote the overall ignition delay and hollow markers indicate the first-stage ignition delay.
@@ -315,9 +316,9 @@ compressed pressure of \SI{30}{\bar}. Note that $\phi=2.0$ results were not coll
 
 It can be seen from \cref{fig:ignition-delays} that the ignition delays for the \(\phi=0.25\text{
 and } 0.5\) mixtures do not show an NTC region of the ignition delay for both of the pressures
-studied in this work. However, the $\phi=1.0$ mixture shows an NTC region at
-$P_C=\SI[number-unit-product={\ }]{30}{\bar}$ between approximately \SIlist{720;800}{\K}, with
-measured first-stage ignition delays at \SIlist{733;757}{\K}. In addition, the $\phi=2.0$ mixture
+studied in this work. However, the \(\phi=1.0\) mixture shows an NTC region at
+\(P_C=\SI[number-unit-product={\ }]{30}{\bar}\) between approximately \SIlist{720;800}{\K}, with
+measured first-stage ignition delays at \SIlist{733;757}{\K}. In addition, the \(\phi=2.0\) mixture
 shows an NTC region of ignition delay at \SI{15}{\bar} from approximately \SIrange{720}{780}{\K},
 with measured first-stage ignition delays between \SIlist{720;750}{\K}.
 
@@ -329,6 +330,43 @@ with measured first-stage ignition delays between \SIlist{720;750}{\K}.
     ignition delays. a) \SI{15}{\bar}. b) \SI{30}{\bar}}
     \label{fig:ignition-delays}
 \end{center}
+
+\citet{Hadj-Ali2009} also observed two-stage ignition of MV in stoichiometric mixtures, stating that
+``[m]ethyl pentanoate... was more reactive [than methyl butanoate] with a limit below which
+autoignition no longer occurs observed at \(T_c = \SI{670}{\K}\) and \(P_c = \SI{11.4}{\bar}\). At
+this temperature, the autoignition occurred in two stages with a clearly identified cool flame
+event.''\cite{Hadj-Ali2009} However, we do not find two stage ignition for the similar pressure of
+\(P_C = \SI{15}{\bar}\) in this study. We note that the stated temperature of the experiment from
+the work of \citet{Hadj-Ali2009} (\SI{670}{\K}) is much lower than the lowest temperature we
+considered in this work at \SI{15}{\bar}, \(\phi=1.0\) (\SI{828}{\K}). We did not conduct
+experiments at lower temperatures because the work of \citet{Mittal2006} showed that the temperature
+field in the RCM reaction chamber was uniform for approximately \SI{100}{\ms} after the EOC, and our
+measured ignition delay at \SI{15}{\bar}, \(\phi=1.0\) \SI{828}{\K} is \SI{92.14}{\ms}.
+
+However, we note NTC behavior of the ignition delay and two-stage ignition at the higher pressure of
+\SI{30}{\bar}, and at higher temperatures than those reported for two-stage ignition in the study of
+\citet{Hadj-Ali2009}. The trend of NTC behavior shifting to higher temperatures with increasing
+pressure can be seen in other classes of fuels. \citet{Kukkadapu2012} found a similar trend in
+gasoline composed of iso-alkanes, n-alkanes, cyclo-alkanes, aromatics, and olefins.
+\citet{Kukkadapu2012} attributed the NTC shift to the reactions between the hydroperoxyalkyl radical
+(\ce{QOOH}) and \ce{O2} becoming more dominant than the unimolecular decomposition of \ce{QOOH} at
+higher pressures. Similar trends could occur for the hydroperoxyalkyl radicals of MV.
+
+To further understand the effect of the methyl ester functional group on the NTC region of ignition
+delay, we compare with the alkane and alcohol with 5-carbon alkyl chains, n-pentane and n-pentanol.
+n-Pentane and MV have the same fuel mole percentage for stoichiometric mixtures in air
+(\SI{2.56}{\percent}), while n-pentanol has a fuel mole percentage of \SI{2.72}{\percent} for
+stoichiometric conditions. \citet{Ribaucour1998} and \citet{Bugler2015} found the NTC region for
+n-pentane to be between \SIlist{760;910}{\K} at pressures near \SI{10}{\atm}. As we will compare
+with our MV data at \SI{30}{\bar}, we note that increasing the pressure tends to shift the NTC
+to higher temperatures, as mentioned previously \cite{Kukkadapu2012}. \citet{Heufer2013} found NTC
+behavior for n-pentanol in the range of \SIrange{770}{900}{\K} at \SI{30}{\bar}. In this study, we
+find the NTC window for MV at \SI{30}{\bar} to be between \SIlist{720;800}{\K}. Therefore, it
+appears that the methyl ester functional group shifts the NTC range to lower temperature as compared
+to alkanes and alcohols with similar alkyl chain lengths. This result was also noted by
+\citet{Hadj-Ali2009} for MHEX as the fuel.
+
+\subsection{Pressure Traces}\label{sec:pressure-traces}
 
 \Cref{fig:pressure-traces}a shows the pressure traces for selected experiments at \(\phi=1.0\),
 \(P_C =\SI[number-unit-product={\ }]{30}{\bar}\). The three reactive pressure traces shown are at
