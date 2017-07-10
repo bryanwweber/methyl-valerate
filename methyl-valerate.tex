@@ -35,7 +35,7 @@
 \begin{document}
 %======================================================================
 \begin{frontmatter}
-\title{ Autoignition of Methyl Valerate at Low to Intermediate Temperatures and Elevated Pressures in a Rapid Compression Machine }
+\title{ Experiments and Modeling of Autoignition of Methyl Valerate at Low to Intermediate Temperatures and Elevated Pressures in a Rapid Compression Machine }
 
 \author[uconn]{Bryan W.\ Weber\corref{cor1}}
 \author[uconn]{Justin Bunnell}
@@ -47,29 +47,25 @@
 
 %====================================================================
 \begin{abstract} % not to exceed 200 words
-    Methyl valerate (\ce{C6H12O2}, methyl pentanoate) is a methyl ester and a
-    relevant surrogate component for biodiesel. In this work, we present
-    ignition delays of methyl valerate measured using a rapid compression
-    machine at a range of engine-relevant temperature, pressure, and equivalence
-    ratio conditions. The conditions we have studied include equivalence ratios
-    from \numrange{0.25}{2.0}, temperatures between \SIlist{680;1050}{\K}, and
-    pressures of \SIlist{15;30}{\bar}. The ignition delay data demonstrate a
-    negative temperature coefficient region in the temperature range of
-    \SIrange[range-phrase={--}]{720}{800}{\K} for both \(\phi=2.0\),
-    \SI{15}{\bar} and \(\phi=1.0\), \SI{30}{\bar}, with two-stage ignition
-    apparent over the narrower temperature ranges of
-    \SIrange[range-phrase={--}]{720}{760}{\K} for the lower pressure and
-    \SIrange[range-phrase={--}]{740}{760}{\K} at the higher pressure. In
-    addition, the experimental ignition delay data are compared with simulations
-    using an existing chemical kinetic model from the literature. The
-    simulations with the literature model under-predict the data by factors
-    between \numlist{2;10} over the entire range of the experimental data. To
-    help determine the possible reasons for the discrepancy between simulations
-    and experiments, a new chemical kinetic model is developed using the
-    Reaction Mechanism Generator (RMG) software. The agreement between the
-    experimental data and the RMG model is improved but still not satisfactory.
-    Directions for future improvement of the methyl valerate model are
-    discussed.
+    Methyl valerate (\ce{C6H12O2}, methyl pentanoate) is a methyl ester and a relevant surrogate
+    component for biodiesel. In this work, we present ignition delays of methyl valerate measured
+    using a rapid compression machine at a range of engine-relevant temperature, pressure, and
+    equivalence ratio conditions. The conditions we have studied include equivalence ratios from
+    \numrange{0.25}{2.0}, temperatures between \SIlist{680;1050}{\K}, and pressures of
+    \SIlist{15;30}{\bar}. The ignition delay data demonstrate a negative temperature coefficient
+    region in the temperature range of \SIrange[range-phrase={--}]{720}{800}{\K} for both
+    \(\phi=2.0\), \SI{15}{\bar} and \(\phi=1.0\), \SI{30}{\bar}, with two-stage ignition apparent
+    over the narrower temperature ranges of \SIrange[range-phrase={--}]{720}{760}{\K} for the lower
+    pressure and \SIrange[range-phrase={--}]{740}{760}{\K} at the higher pressure. In addition, the
+    experimental ignition delay data are compared with simulations using an existing chemical
+    kinetic model from the literature. The simulations with the literature model under-predict the
+    data by factors between \numlist{2;10} over the entire range of the experimental data. In
+    addition, a new chemical kinetic model is developed using the Reaction Mechanism Generator (RMG)
+    software. The agreement between the experimental data and the RMG model is also not
+    satisfactory. To help determine the possible reasons for the disagreement, a path analysis of
+    both models is completed. It is found that improvements to both the reaction pathways and
+    thermodynamic properties is required. Further directions for future improvement of the methyl
+    valerate model are discussed.
 \end{abstract}
 
 % (Provide 2-4 keywords describing your research. Only abbreviations firmly
@@ -92,7 +88,7 @@ engines~\cite{Hoekman2012}. Biodiesel typically consists of long-chain methyl es
 typical compositions of \ce{C14} to \ce{C20}~\cite{Hoekman2012}. Recognizing that the large
 molecular size of the methyl esters within biodiesel fuel makes creating and using detailed chemical
 kinetic mechanisms challenging~\cite{Lai2011}, it is desired to study their combustion chemistry by
-studying simpler molecules.
+studying simpler methyl ester molecules.
 
 A recent review paper summarizes the work on methyl esters relevant to biodiesel
 combustion~\cite{Coniglio2013}; the following summary focuses on ignition delay measurements, since
@@ -130,10 +126,10 @@ The RCM used in this study is a single piston arrangement and is pneumatically d
 hydraulically stopped. The device has been described in detail previously~\cite{Mittal2007a} and
 will be described here briefly for reference. The end of compression (EOC) temperature and pressure
 (\(T_C\) and \(P_C\) respectively), are independently changed by varying the overall compression
-ratio, initial pressure \((P_0)\), and initial temperature \((T_0)\) of the experiments. The piston
-in the reaction chamber is machined with a specially designed crevice to suppress the roll-up vortex
-effect and promote homogeneous conditions in the reactor during and after
-compression~\cite{Mittal2006}.
+ratio, initial pressure \((P_0)\), initial temperature \((T_0)\), and specific heat ratio of the
+experiments. The piston in the reaction chamber is machined with a specially designed crevice to
+suppress the roll-up vortex effect and promote homogeneous conditions in the reactor during and
+after compression~\cite{Mittal2006}.
 
 The primary diagnostic on the RCM is the in-cylinder pressure measured by a Kistler 6125C dynamic
 transducer that is compensated for thermal shock. The transducer is coupled to a Kistler 5010B
@@ -178,16 +174,16 @@ only \(P_C = \SI{15}{\bar}\) is considered because we could not achieve \(T_C\) 
 that the ignition was long enough to be measured in our apparatus (the typical lower limit of
 ignition delay on the present RCM is approximately \SI{5}{\ms}).
 
-Mixtures are prepared in stainless steel mixing tanks, approximately \SI{17}{\L} and \SI{15}{\L} in
-size. The proportions of reactants in the mixture are determined by specifying the absolute mass of
-the fuel, the equivalence ratio \((\phi)\), and the ratio of \(\ce{Ar}:\ce{N2}\) in the oxidizer.
-Mixtures are made by first vacuuming the mixing tanks to an ultimate pressure less than
-\SI{5}{\torr}. Since MV is a liquid with a relatively small vapor pressure at room temperature and
-pressure, it is measured gravimetrically in a syringe to within \SI{0.01}{\g} of the specified
-value. The fuel is injected into the mixing tank through a septum. Proportions of \ce{O2}, \ce{Ar},
-and \ce{N2} are added manometrically at room temperature and the total pressure is measured by an
-Omega Engineering MMA type static pressure transducer. The same transducer is used to measure the
-pressure of the reactants prior to an experiment.
+Mixtures are prepared in stainless steel mixing tanks, \SI{17}{\L} and \SI{15}{\L} in size. The
+proportions of reactants in the mixture are determined by specifying the absolute mass of the fuel,
+the equivalence ratio \((\phi)\), and the ratio of \(\ce{Ar}:\ce{N2}\) in the oxidizer. Mixtures are
+made by first vacuuming the mixing tanks to an ultimate pressure less than \SI{5}{\torr}. Since MV
+is a liquid with a relatively small vapor pressure at room temperature and pressure, it is measured
+gravimetrically to within \SI{0.01}{\g} of the specified value. The fuel is injected into the mixing
+tank through a septum. Proportions of \ce{O2}, \ce{Ar}, and \ce{N2} are added manometrically at room
+temperature and the total pressure is measured by an Omega Engineering MMA100V10T2D0T4A6 type static
+pressure transducer. The same transducer is used to measure the pressure of the reactants prior to
+an experiment.
 
 \begin{center}
     \captionsetup{type=table}
@@ -315,7 +311,9 @@ equivalence ratio indicating the estimated uncertainty in the EOC temperature of
 $\pm\SI{1}{\percent}$~\cite{Weber2015}. \cref{fig:ignition-delays}a shows the results for a
 compressed pressure of \SI{15}{\bar}, while \cref{fig:ignition-delays}b shows the results for a
 compressed pressure of \SI{30}{\bar}. Note that $\phi=2.0$ results were not collected for
-\SI{30}{\bar}, so there are no red data points in \cref{fig:ignition-delays}b.
+\SI{30}{\bar}, so there are no red data points in \cref{fig:ignition-delays}b. All the data are
+available in comma-separated value files and ChemKED-format \cite{Weber2017} files in the
+Supplementary Material.
 
 It can be seen from \cref{fig:ignition-delays} that the ignition delays for the \(\phi=0.25\text{
 and } 0.5\) mixtures do not show an NTC region of the ignition delay for both of the pressures
@@ -344,7 +342,7 @@ the work of \citet{Hadj-Ali2009} (\SI{670}{\K}) is much lower than the lowest te
 considered in this work at \SI{15}{\bar}, \(\phi=1.0\) (\SI{828}{\K}). We did not conduct
 experiments at lower temperatures because the work of \citet{Mittal2006} showed that the temperature
 field in the RCM reaction chamber was uniform for approximately \SI{100}{\ms} after the EOC, and our
-measured ignition delay at \SI{15}{\bar}, \(\phi=1.0\) \SI{828}{\K} is \SI{92.14}{\ms}.
+measured ignition delay at \SI{15}{\bar}, \(\phi=1.0\), and \SI{828}{\K} is \SI{92.14}{\ms}.
 
 However, we note NTC behavior of the ignition delay and two-stage ignition at the higher pressure of
 \SI{30}{\bar}, and at higher temperatures than those reported for two-stage ignition in the study of
@@ -458,7 +456,7 @@ the model. Further detailed studies are required to ensure that the RMG model in
 relevant reaction pathways, which are outside the scope of this work.
 
 The second source of error may be incorrect reaction rate parameters, either because the rates are
-specified incorrectly in the model (e.g., typos) or because the rates are not well estimated by the
+specified incorrectly in the model or because the rates are not well estimated by the
 typical analogy based-rules. It should be noted that errors of this type may affect the model
 generated by RMG---if the rates are not estimated correctly, reactions that are important in reality
 may not be included in the model. Determining the accuracy of the reaction rates used in the RMG and
@@ -519,12 +517,12 @@ initial temperature and pressure of \SI{700}{\K}, \SI{30}{\bar}, and for the sto
 equivalence ratio. The rates of production of the species have been integrated until the time of
 \SI{20}{\percent} fuel consumption. The results of this analysis are shown in \cref{tab:mv-radicals}
 for the two models. The percentages shown in the \cref{tab:mv-radicals} are the percent of the fuel
-destroyed to form a particular fuel radical by all the reactions that can form that radical, and the
+consumed to form a particular fuel radical by all the reactions that can form that radical, and the
 radicals are labeled according to the convention in \cref{fig:mv-structure}.
 
 \begin{center}
     \captionsetup{type=table}
-    \caption{Percent of MV destroyed to form fuel radical species with a hydrogen atom missing at
+    \caption{Percent of MV consumed to form fuel radical species with a hydrogen atom missing at
     the location indicated in the first column and \cref{fig:mv-structure}}
     \label{tab:mv-radicals}
     \begin{tabular}{cSSS}
@@ -541,7 +539,7 @@ radicals are labeled according to the convention in \cref{fig:mv-structure}.
 \end{center}
 
 At the relatively low temperature and high pressure condition of this analysis, all of the fuel is
-destroyed by \ce{H}-atom abstractions to form the fuel radicals shown. It can be seen that the two
+consumed by \ce{H}-atom abstractions to form the fuel radicals shown. It can be seen that the two
 models have quite different distributions of products from the first \ce{H}-abstraction reactions.
 The model of \cite{Dievart2013} predicts that \ce{H}-abstraction from the second carbon is the most
 prevalent, while the RMG model predicts that the radical on the fourth carbon in the chain will be
@@ -552,7 +550,7 @@ formed in each model.
 To further compare the models with each other, the NASA polynomials representing the thermodynamic
 properties of MV and the 5 fuel radicals from the model of \citet{Dievart2013} and are used to
 replace the equivalent molecules in the RMG model. The results of a path analysis at the same
-condition as the other analysis is shown in \cref{tab:mv-radicals} in the ``RMG switch'' column.
+condition as the other analysis is shown in \cref{tab:mv-radicals} in the ``RMG switched'' column.
 This analysis shows that the radical on the fourth carbon atom is still the most prevalant, despite
 changing the heats of formation of the fuel and its radicals.
 
