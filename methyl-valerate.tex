@@ -2,7 +2,7 @@
 
 \journal{Fuel}
 
-\usepackage{todonotes}
+\usepackage{multirow}
 
 \usepackage{lineno}
 
@@ -11,7 +11,10 @@
 
 \usepackage[version=4]{mhchem}
 \usepackage{siunitx}
-\sisetup{separate-uncertainty=true}
+\sisetup{
+    separate-uncertainty=true,
+    per-mode=symbol
+}
 
 \usepackage{graphicx}
 \usepackage{pgf}
@@ -136,7 +139,7 @@ The primary diagnostic on the RCM is the in-cylinder pressure measured by a Kist
 transducer that is compensated for thermal shock. The transducer is coupled to a Kistler 5010B
 charge amplifier. The voltage output of the charge amplifier is recorded by a National Instruments
 9125 analog input device connected to a cDAQ 9178 chassis. The voltage is sampled at a rate of
-either \todo{Check this} 50 kHz or 100 kHz by a LabView VI and processed by a Python package called
+either 50 kHz or 100 kHz by a LabView VI and processed by a Python package called
 UConnRCMPy~\cite{Weber2016a}. Version 3.0.0 of UConnRCMPy~\cite{uconnrcmpy}, 3.6.1 of Python, 2.3.0
 of Cantera~\cite{cantera}, 1.13 of NumPy~\cite{vanderWalt2011}, 0.19.0 of SciPy~\cite{Jones2001},
 and 2.0.1 of Matplotlib~\cite{Hunter2007} were used in the analysis in this paper.
@@ -465,53 +468,98 @@ pressure dependence of the reaction rates, which may be particularly important f
 reactions prevalent in low-temperature chemistry.
 
 The third source of error may lie in the estimation of the thermodynamic properties of the species,
-particularly the fuel radicals. By conducting a reaction pathway analysis to determine which
-radicals are formed from the breakdown of the fuel, we can analyze the proportion of each radical
-formed as the fuel breaks down during the autoignition process. The following analysis is conducted
-for a constant volume simulation at \SI{700}{\K}, \SI{30}{\bar}, and the stoichiometric equivalence
-ratio, where the rates of production of the species have been integrated until the time of
-\SI{20}{\percent} fuel consumption. The results of this analysis are shown in
-\cref{fig:mv-structure} and \cref{tab:mv-radicals} for the two models. The percentages shown in the
-\cref{tab:mv-radicals} are the percent of the fuel destroyed to form a particular fuel radical by
-all the reactions that can form that radical.
-
-At the relatively low temperature and high pressure condition of this analysis,
-all of the fuel is destroyed by \ce{H}-atom abstractions to form the fuel
-radicals shown. It can be seen that the two models have quite different
-distributions of products from the first \ce{H}-abstraction reactions. The model
-of \cite{Dievart2013} predicts that \ce{H}-abstraction from the second
-carbon is the most prevalent, followed closely by abstraction from the methyl
-group. This is in line with the bond energies of the \ce{C-H} bonds for those
-carbon atoms; we expect that the presence of the oxygen atoms will cause
-hydrogen abstraction at the nearby carbons to be favored. However, the RMG model
-predicts that radicals in the middle of the carbon chain will be primarily
-formed. The cause of this discrepancy is under investigation, but it may be
-caused by the estimation of thermodynamic properties of the radicals.
+particularly the fuel radicals. In the work of \citet{Dievart2013}, the program THERM
+\cite{Ritter1991} is used to estimate thermodynamic values using the group additivity method. In the
+RMG model constructed in this work, RMG itself estimates the thermodynamic properties of the
+molecules also using the group additivity method. Nonetheless, the two models have differing
+predictions of the thermodynamic properties of the species in the model, particularly the fuel and
+its radicals. The values of the heats of formation of the fuel and its \ce{H}-atom abstraction
+radicals are shown in \cref{tab:heat-of-formation}; the radicals are labeled according to the
+convention shown in \cref{fig:mv-structure}.
 
 \begin{center}
     \captionsetup{type=figure}
-    \includegraphics[width=90mm]{figures/Methyl_pentanoate.png}
-    \caption{Structure of MV with carbon atoms labeled according to the convention used in \cref{tab:mv-radicals}}
+    \includegraphics[width=60mm]{figures/Methyl_pentanoate.png}
+    \caption{Structure of MV with carbon atoms labeled according to the convention used in \cref{tab:heat-of-formation} and \cref{tab:mv-radicals}}
     \label{fig:mv-structure}
 \end{center}
+
+\begin{center}
+    \captionsetup{type=table}
+    \caption{Heats of formation of MV and its radicals, labeled according to the convention used in \cref{fig:mv-structure}}
+    \label{tab:heat-of-formation}
+    \begin{tabular}{cSSSS}
+        \toprule
+        \multirow{2}{*}{Radical Site} & \multicolumn{2}{c}{\citet{Dievart2013}} & \multicolumn{2}{c}{RMG Model} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        & {[\si{\kJ\per\mole}]} & {[\si{\kilo\calorie\per\mole}]} & {[\si{\kJ\per\mole}]} & {[\si{\kilo\calorie\per\mole}]} \\
+        \midrule
+        MV & -470.98 & -112.57 & -472.53 & -112.94 \\
+        2 & -297.16 & -71.02 & -273.63 & -65.40 \\
+        3 & -277.03 & -66.21 & -273.63 & -65.40 \\
+        4 & -277.03 & -66.21 & -278.61 & -66.59 \\
+        5 & -265.94 & -63.56 & -267.53 & -63.94 \\
+        M & -270.51 & -64.65 & -270.12 & -64.56 \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+\Cref{tab:heat-of-formation} shows that the heats of formation of the fuel and radicals 3, 4, 5, and
+M are quite similar between the two mechanisms. However, the heat of formation of the second
+radical, the one closest to the methyl ester group, has a significantly lower heat of formation in
+the model by \citet{Dievart2013} than in the RMG model. Note that it is expected that the second
+radical will be somewhat more stable than the other radicals, due to the influence of the methyl
+ester group on the adjacent carbon atom.
+
+This difference in heats of formation affects the pathways that consume the fuel. By conducting a
+reaction pathway analysis to determine which radicals are formed from the breakdown of the fuel, we
+can analyze the proportion of each radical formed as the fuel breaks down during the autoignition
+process. The following analysis is conducted for a constant volume, adiabatic simulation with
+initial temperature and pressure of \SI{700}{\K}, \SI{30}{\bar}, and for the stoichiometric
+equivalence ratio. The rates of production of the species have been integrated until the time of
+\SI{20}{\percent} fuel consumption. The results of this analysis are shown in \cref{tab:mv-radicals}
+for the two models. The percentages shown in the \cref{tab:mv-radicals} are the percent of the fuel
+destroyed to form a particular fuel radical by all the reactions that can form that radical, and the
+radicals are labeled according to the convention in \cref{fig:mv-structure}.
 
 \begin{center}
     \captionsetup{type=table}
     \caption{Percent of MV destroyed to form fuel radical species with a hydrogen atom missing at
     the location indicated in the first column and \cref{fig:mv-structure}}
     \label{tab:mv-radicals}
-    \begin{tabular}{cSSSS}
+    \begin{tabular}{cSSS}
         \toprule
-        Radical Site & {\citet{Dievart2013} [\si{\percent}]} & {RMG Model [\si{\percent}]} & & \\
+        Radical Site & {\citet{Dievart2013} [\si{\percent}]} & {RMG Model [\si{\percent}]} & {RMG switched [\si{\percent}]}\\
         \midrule
-        2 & 29.3 & 12.5 & 27.7 & 15.6\\
-        3 & 17.5 & 12.2 & 17.8 & 20.1\\
-        4 & 17.5 & 50.6 & 17.8 & 23.2 \\
-        5 & 9.4 & 3.9 & 10.1 & 2.7 \\
-        M & 26.3 & 20.8 & 26.6 & 38.4\\
+        2 & 29.2 & 12.5 & 11.0 \\
+        3 & 17.5 & 12.2 & 11.1 \\
+        4 & 17.5 & 50.6 & 56.6 \\
+        5 & 9.5 & 3.9 & 4.3 \\
+        M & 26.3 & 20.8 & 16.9 \\
         \bottomrule
     \end{tabular}
 \end{center}
+
+At the relatively low temperature and high pressure condition of this analysis, all of the fuel is
+destroyed by \ce{H}-atom abstractions to form the fuel radicals shown. It can be seen that the two
+models have quite different distributions of products from the first \ce{H}-abstraction reactions.
+The model of \cite{Dievart2013} predicts that \ce{H}-abstraction from the second carbon is the most
+prevalent, while the RMG model predicts that the radical on the fourth carbon in the chain will be
+primarily formed. This is in line with the heats of formation in \cref{tab:heat-of-formation}, where
+the most stable radical (i.e., the radical with the smallest heat of formation) is most likely to be
+formed in each model.
+
+To further compare the models with each other, the NASA polynomials representing the thermodynamic
+properties of MV and the 5 fuel radicals from the model of \citet{Dievart2013} and are used to
+replace the equivalent molecules in the RMG model. The results of a path analysis at the same
+condition as the other analysis is shown in \cref{tab:mv-radicals} in the ``RMG switch'' column.
+This analysis shows that the radical on the fourth carbon atom is still the most prevalant, despite
+changing the heats of formation of the fuel and its radicals.
+
+Taken together, these results show that the errors in a given model cannot be attributed to a single
+source. There is a strong interaction between the thermodynamics of the species and the kinetics of
+the reactions, requiring further detailed study of the methyl ester system to accurately predict the
+low temperature ignition delays of methyl valerate.
 
 \section{Conclusions}\label{sec:conclusions}
 
@@ -522,10 +570,12 @@ and two-stage ignition were recorded for pressures of \SI{15}{\bar} at \(\phi=2.
 unable to reproduce the experimental results, so a new model was constructed using the Reaction
 Mechanism Generator software. Although the new model contains many more reactions than the
 literature model, it is still unable to predict the experimental ignition delays satisfactorily.
-Possible reasons for the discrepancy include missing reaction pathways, incorrect rate estimates,
-and incorrect thermodynamic property estimates. Future work will include investigation of the
-discrepancies between models and experiments to further understand the autoignition kinetics of
-methyl valerate.
+Both models predict an NTC region of the ignition delay under conditions where none was found in the
+experiments, and fail to predict the NTC region of ignition delay that is present in the
+experiments. Possible reasons for the discrepancy include missing reaction pathways, incorrect rate
+estimates, and incorrect thermodynamic property estimates. Comparative analysis of the two models
+failed to identify a single source of the error, and further detailed studies are required to
+improve predictions of the ignition delay at these engine-relevant conditions.
 
 \section*{References}
 \bibliography{methyl-valerate}
