@@ -7,7 +7,7 @@
 %% merlin.mbs  (with options: `,ay,natseq-no,vonx,nm-init,ed-au,dt-jnl,xmth,jtit-x,jttl-rm,trtit-b,vnum-x,volp-blk,jdt-vs,pp-last,num-xser,numser,jnm-x,btit-rm,bt-rm,edpar,bkedcap,blk-com,blknt,in-col,pp,ed,xedn,jabr,and-xcom,xand,em-it,nfss')
 %% ----------------------------------------
 %% *** Model 1a - Number ***
-%% 
+%%
 %% Copyright 1994-2002 Patrick W Daly
  % ===============================================================
  % IMPORTANT NOTICE:
