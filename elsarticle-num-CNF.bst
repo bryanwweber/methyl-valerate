@@ -70,10 +70,21 @@ ENTRY
     volume
     year
     doi
+    url
+    eprint
   }
   {}
   { label extra.label sort.label short.list }
 INTEGERS { output.state before.all mid.sentence after.sentence after.block }
+
+STRINGS { urlprefix doiprefix eprintprefix }
+
+FUNCTION {init.web.variables}
+{
+"\DOIprefix" 'doiprefix :=
+"\ArXivprefix" 'eprintprefix :=
+"\URLprefix" 'urlprefix :=
+}
 FUNCTION {init.state.consts}
 { #0 'before.all :=
   #1 'mid.sentence :=
@@ -837,14 +848,37 @@ FUNCTION {format.organization.address}
 { organization "organization" bibinfo.check format.org.or.pub
 }
 
-FUNCTION {format.doi}
-{ "DOI:" doi
+FUNCTION {print.doi}
+{ doi duplicate$ empty$
+    { pop$ "" }
+    { new.sentence
+      doiprefix "\doi{" * swap$  *  "}" * }
+  if$
+}
+
+FUNCTION {print.url}
+{ url duplicate$ empty$
+    { pop$ "" }
+    { new.sentence
+      urlprefix "\url{" * swap$  *  "}" * }
+  if$
+}
+
+FUNCTION {print.eprint}
+{ eprint duplicate$ empty$
+  { pop$ "" }
+  { new.sentence
+    duplicate$ "\href{http://arxiv.org/abs/" swap$ * "}{{\tt arXiv:" * swap$ * "}}" * }
+  if$
 }
 
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
+  new.block
+  format.title "title" output.check
+  new.block
   crossref missing$
     {
       journal
@@ -858,6 +892,8 @@ FUNCTION {article}
   if$
   format.journal.pages
   new.sentence
+  print.doi output
+  print.eprint output
   format.note output
   fin.entry
 }
@@ -975,6 +1011,7 @@ FUNCTION {inproceedings}
   if$
   format.pages "pages" output.check
   new.sentence
+  print.url output
   format.note output
   fin.entry
 }
@@ -1017,8 +1054,9 @@ FUNCTION {misc}
   howpublished "howpublished" bibinfo.check output
   format.date "year" output.check
   format.publisher.address output
-%  format.doi
   new.sentence
+  print.doi output
+  print.url output
   format.note output
   fin.entry
 }
