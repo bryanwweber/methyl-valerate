@@ -72,18 +72,20 @@ ENTRY
     doi
     url
     eprint
+    version
   }
   {}
   { label extra.label sort.label short.list }
 INTEGERS { output.state before.all mid.sentence after.sentence after.block }
 
-STRINGS { urlprefix doiprefix eprintprefix }
+STRINGS { urlprefix doiprefix eprintprefix versionprefix }
 
 FUNCTION {init.web.variables}
 {
 "\DOIprefix" 'doiprefix :=
 "\ArXivprefix" 'eprintprefix :=
 "\URLprefix" 'urlprefix :=
+"\versionprefix" 'versionprefix :=
 }
 FUNCTION {init.state.consts}
 { #0 'before.all :=
@@ -856,6 +858,14 @@ FUNCTION {print.doi}
   if$
 }
 
+FUNCTION {print.version}
+{ version duplicate$ empty$
+    { pop$ "" }
+    { new.sentence
+      versionprefix "v" * swap$  * "" * }
+  if$
+}
+
 FUNCTION {print.url}
 { url duplicate$ empty$
     { pop$ "" }
@@ -994,6 +1004,9 @@ FUNCTION {inproceedings}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
+  new.block
+  format.title "title" output.check
+  new.block
   crossref missing$
     { format.in.ed.booktitle "booktitle" output.check
       format.bvolume output
@@ -1045,11 +1058,26 @@ FUNCTION {mastersthesis}
   fin.entry
 }
 
+FUNCTION {software}
+{ output.bibitem
+  format.authors output
+  author format.key output
+  new.block
+  format.title output
+  format.date "year" output.check
+  new.sentence
+  print.version output
+  print.doi output
+  print.url output
+  fin.entry
+}
+
 FUNCTION {misc}
 { output.bibitem
   format.authors output
   format.edition output
   author format.key output
+  new.block
   format.title output
   howpublished "howpublished" bibinfo.check output
   format.date "year" output.check

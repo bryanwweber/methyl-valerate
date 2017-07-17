@@ -1,3 +1,6 @@
+# Vapor pressure data from Juan Ortega, Fernando Espiau, Jose Tojo, Jose Canosa, and Ana Rodriguez. "Isobaric Vapor-Liquid Equilibria and Excess Properties for the Binary Systems of Methyl Esters + Heptane." Journal of Chemical & Engineering Data 48, no. 5 (September 2003): 1183-1190. doi:10.1021/je030117d.
+#
+# Temperature (K), Vapor Pressure (kPa)
 364.75, 32.01
 365.85, 33.33
 366.98, 34.67
@@ -20,8 +23,8 @@
 381.82, 57.33
 382.51, 58.67
 383.29, 59.99
-383.95, 61.33 
-384.62, 62.68 
+383.95, 61.33
+384.62, 62.68
 385.25, 63.99
 385.95, 65.33
 386.57, 66.66

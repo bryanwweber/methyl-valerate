@@ -28,6 +28,7 @@
 
 \DeclareSIUnit\torr{Torr}
 \DeclareSIUnit\atm{atm}
+\DeclareSIUnit\calorie{cal}
 
 \bibliographystyle{elsarticle-num-CNF}
 \usepackage{doi}
@@ -35,7 +36,7 @@
 \begin{document}
 %======================================================================
 \begin{frontmatter}
-\title{ Experiments and Modeling of Autoignition of Methyl Valerate at Low to Intermediate Temperatures and Elevated Pressures in a Rapid Compression Machine }
+\title{ Experiments and Modeling of the Autoignition of Methyl Valerate at Low to Intermediate Temperatures and Elevated Pressures in a Rapid Compression Machine }
 
 \author[uconn]{Bryan W.\ Weber\corref{cor1}}
 \author[uconn]{Justin A.\ Bunnell}
@@ -139,7 +140,7 @@ charge amplifier. The voltage output of the charge amplifier is recorded by a Na
 9125 analog input device connected to a cDAQ 9178 chassis. The voltage is sampled at a rate of
 either 50 kHz or 100 kHz by a LabView VI and processed by a Python package called
 UConnRCMPy~\cite{Weber2016a}. Version 3.0.5 of UConnRCMPy~\cite{uconnrcmpy}, 3.6 of Python, 2.3.0
-of Cantera~\cite{cantera}, 1.13 of NumPy~\cite{vanderWalt2011}, 0.19.0 of SciPy~\cite{Jones2001},
+of Cantera~\cite{cantera}, 1.13.0 of NumPy~\cite{vanderWalt2011}, 0.19.0 of SciPy~\cite{Jones2001},
 and 2.0.1 of Matplotlib~\cite{Hunter2007} are used in the analysis in this paper.
 
 \begin{center}
@@ -240,8 +241,8 @@ the data of \citet{Ortega2003}, \citet{vanGenderen2002}, and \citet{Verevkin2008
 \verb|curve_fit()| function of SciPy~\cite{Jones2001} version 0.19.0. \Cref{fig:vapor-pressure}
 shows that the coefficients fitted with this procedure give good agreement with the experimental
 data; values for the coefficients computed in this work and in the literature works are given in
-\cref{tab:antoine}. The data used to calculate the coefficients are provided in the Supplementary
-Material.
+\cref{tab:antoine}. The data and code used to calculate the coefficients are provided in the
+Supplementary Material.
 
 \begin{center}
     \captionsetup{type=table}
@@ -274,10 +275,17 @@ machine-specific effects on the experimental conditions in the RCM. This pressur
 with the reactive pressure trace and used to compute a volume trace by assuming that the reactants
 undergo a reversible, adiabatic, constant composition (i.e., isentropic) compression during the
 compression stroke and an isentropic expansion after the EOC. The volume trace is applied to a
-simulation conducted in an \verb|IdealGasReactor| in Cantera~\cite{cantera} using the CVODES
-solver from the SUNDIALS suite~\cite{Hindmarsh2005}. The ignition delays from the simulations are
-defined in the same manner as in the experiments. The time derivative of the pressure in the
-simulation is computed by second order Lagrange polynomials, as discussed by \citet{Chapra2010}.
+simulation conducted in an \verb|IdealGasReactor| in Cantera~\cite{cantera} using the CVODES solver
+from the SUNDIALS suite~\cite{Hindmarsh2005}. The ignition delays from the simulations are defined
+in the same manner as in the experiments. The time derivative of the pressure in the simulation is
+computed by second order Lagrange polynomials, as discussed by \citet{Chapra2010}. The volume trace
+files, the corresponding pressure traces, and \texttt{volume-trace.yaml} files suitable for use with
+UConnRCMPy v3.0.5~\cite{uconnrcmpy} are available on the web at
+\url{https://combdiaglab.engr.uconn.edu/database/rcm-database} and on figshare at
+\url{https://doi.org/10.6084/m9.figshare.5213341}. In addition, ChemKED-format~\cite{Weber2017}
+files are available in the main ChemKED database repository at
+\url{https://github.com/pr-omethe-us/ChemKED-database}.
+
 
 To the best of our knowledge, there are three mechanisms for MV combustion available in the
 literature. The first two, by \citet{Korobeinichev2015} and \citet{Dmitriev2015}, were developed to
@@ -315,9 +323,8 @@ of each equivalence ratio indicating the estimated uncertainty in the EOC temper
 $\pm\SI{1}{\percent}$~\cite{Weber2015}. \cref{fig:ignition-delays}a shows the results for a
 compressed pressure of \SI{15}{\bar}, while \cref{fig:ignition-delays}b shows the results for a
 compressed pressure of \SI{30}{\bar}. Note that $\phi=2.0$ results were not collected for
-\SI{30}{\bar}, so there are no red triangle data points in \cref{fig:ignition-delays}b. All the data
-are available in comma-separated value files and ChemKED-format \cite{Weber2017} files in the
-Supplementary Material.
+\SI{30}{\bar}, so there are no red triangle data points in \cref{fig:ignition-delays}b. A summary of
+the ignition delay data is available as a comma-separated value file in the Supplementary Material.
 
 It can be seen from \cref{fig:ignition-delays} that the ignition delays for the \(\phi=0.25\text{
 and } 0.5\) mixtures do not show an NTC region of the ignition delay for both of the pressures
@@ -391,7 +398,7 @@ release at \SI{774}{\K} appears to be more gradual than at \SI{700}{\K}.
     \captionsetup{type=figure}
     \includegraphics[width=\textwidth]{figures/pressure-traces.pdf}
     \caption{Selected pressure traces around the NTC region of ignition delay.
-    a) \(\phi=1.0,\ P_C=\SI{30}{\bar}\) b) \(\phi=2.0,\ P_C=\SI{15}{\bar}\)}
+    a) \(\phi=1.0,\ P_C=\SI{30}{\bar}\), b) \(\phi=2.0,\ P_C=\SI{15}{\bar}\)}.
     \label{fig:pressure-traces}
 \end{center}
 
@@ -419,7 +426,7 @@ strain rates.
 \begin{center}
     \captionsetup{type=figure}
     \resizebox{\textwidth}{!}{\input{figures/simulation-comparison.pgf}}
-    \caption{Comparison of experimental and simulated results. a) \SI{15}{\bar}; b) \SI{30}{\bar}}
+    \caption{Comparison of experimental and simulated results. a) \SI{15}{\bar}, b) \SI{30}{\bar}}.
     \label{fig:simulation-comparison}
 \end{center}
 
@@ -495,13 +502,15 @@ convention shown in \cref{fig:mv-structure}.
 \begin{center}
     \captionsetup{type=figure}
     \includegraphics[width=60mm]{figures/Methyl_pentanoate.png}
-    \caption{Structure of MV with carbon atoms labeled according to the convention used in \cref{tab:heat-of-formation} and \cref{tab:mv-radicals}}
+    \caption{Structure of MV with carbon atoms labeled according to the convention used in
+    \cref{tab:heat-of-formation} and \cref{tab:mv-radicals}}
     \label{fig:mv-structure}
 \end{center}
 
 \begin{center}
     \captionsetup{type=table}
-    \caption{Heats of formation of MV and its radicals, labeled according to the convention used in \cref{fig:mv-structure}}
+    \caption{Heats of formation of MV and its radicals, labeled according to the convention used in
+    \cref{fig:mv-structure}}
     \label{tab:heat-of-formation}
     \begin{tabular}{cSSSS}
         \toprule
@@ -591,6 +600,12 @@ reasons for the discrepancy include missing reaction pathways, incorrect rate es
 incorrect thermodynamic property estimates. Comparative analysis of the two models failed to
 identify a single source of the error, and further detailed studies are required to improve
 predictions of the ignition delay at these engine-relevant conditions.
+
+\section{Acknowledgments}\label{sec:acknowledgments}
+
+The authors acknowledge support from the Combustion Energy Frontier Research Center, an Energy
+Frontier Research Center funded by the U.S. Department of Energy, Office of Science, Office of Basic
+Energy Sciences, under award number DE-SC0001198.
 
 \section*{References}
 \bibliography{methyl-valerate}
