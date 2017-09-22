@@ -1,0 +1,503 @@
+% !TEX program: xelatex
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[numbers]{natbib}
+\usepackage{xcite}
+\externalcitedocument{../revised-paper/methyl-valerate}
+\usepackage{xr}
+\externaldocument{../revised-paper/methyl-valerate}
+\usepackage[capitalize]{cleveref}
+\crefname{appendix}{}{}
+\usepackage{siunitx}
+\sisetup{
+    separate-uncertainty=true,
+    per-mode=symbol
+}
+\usepackage{url}
+
+\newenvironment{reviewer}{\vspace{0.5\baselineskip}\begingroup\itshape\textbf{Reviewer:}}{\endgroup\vspace{0.5\baselineskip}}
+\newenvironment{response}{\vspace{0.5\baselineskip}\textbf{Our Response:}}{\vspace{0.5\baselineskip}}
+\newcommand{\review}[1]{{\itshape#1}}
+\newcommand{\respond}[1]{\textbf{Our Response:} #1}
+
+\begin{document}
+
+\noindent Experiments and Modeling of the Autoignition of Methyl Pentanoate at Low to Intermediate Temperatures and Elevated Pressures in a Rapid Compression Machine \\
+Ms.\ Ref.\ No.:  JFUE-D-17-02705
+
+We would like to thank the reviewers for their thoughtful comments.
+Below are detailed responses to each of the reviewers' comments.
+In the attached marked revision, deleted text is marked in red and added text is marked in blue.
+
+\vspace{\baselineskip}
+
+\noindent \textbf{Reviewer \#1:}
+
+\begin{reviewer}
+%
+    The authors study ignition of methyl pentanoate, a small methyl ester, in the current study. The
+    data from the current study is helpful in establishing the reaction rates which can be
+    systematically used for developing the kinetic models for large esters and hence very valuable
+    for developing kinetic models of biodiesel. The study also shows the poor performance of the
+    literature models in estimating the ignition delays underscoring the need for such novel
+    experimental datasets and hence would recommend this work for publication. However, I think the
+    manuscript needs to be revised before it can be published. Below are the specific comments which
+    I think need to addressed before it can be published.
+%
+\end{reviewer}
+
+\begin{response}
+    Thank you for your comments. Detailed responses to each comment are below.
+\end{response}
+
+\begin{reviewer}
+%
+    Please improving the quality of figures. For eg: First stage and total ignition delay Symbols
+    in Figs 5a \& 5b are very hard to differentiate. Figure 1 could also be improved.
+%
+\end{reviewer}
+
+\begin{response}
+    %
+    We have increased the mark size on \cref{fig:simulation-comparison} to better distinguish the
+    overall ignition delay and the first-stage ignition delay. On \cref{fig:ign-delay-def}, we made
+    several changes to improve the clarity, including swapping the colors of reactive and
+    non-reactive pressure traces, changing the non-reactive pressure to a dashed line style, and
+    making the black lines thinner.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    Regarding the statement "The NTC region of MV is mapped out to provide additional information on
+    the fidelity of using MV as a biodiesel surrogate." I am not convinced that MV could be a
+    biodiesel surrogate, in my opinion it helps in understanding the chemistry of large esters.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    We agree with the reviewer that it is possible that MV will not be a good surrogate for
+    biodiesel. Nonetheless, to our knowledge, there has been no study to suggest that it is not a
+    good surrogate, probably because very few studies of MV have been conducted, so there is not
+    enough information to judge. However, we think that judging the suitability (or lack thereof)
+    for MV as a surrogate of biodiesel is outside the scope of this work, so we are simply noting
+    that this study provides part of the necessary experimental information so that others may judge
+    for themselves. We also agree with the reviewer that the scope of this work is actually wider
+    than we had noted previously, so we have added a note that this study provides further
+    information on the autoignition chemistry of large methyl esters near line 41:
+
+    \begin{quote}
+        %
+        ``The NTC region of MV is mapped out to provide additional information on the fidelity of
+        using MV as a biodiesel surrogate and on the autoignition chemistry of large methyl
+        esters.''
+        %
+    \end{quote}
+    %
+\end{response}
+
+\begin{reviewer}
+    Specify the units of coefficients B, C  and, temperature T in equation (1)
+\end{reviewer}
+
+\begin{response}
+    The coefficients are in \si{kPa} and \si{\kelvin}. This has been added to the text near line
+    112 and in the caption of \cref{tab:antoine}.
+    \begin{quote}
+        ``... where \(A\), \(B\), and \(C\) are substance-specific coefficients, given in units of
+        \si{\kelvin} and \si{\kPa}.''
+    \end{quote}
+\end{response}
+
+\begin{reviewer}
+    %
+    The authors report an ignition delay of 100 ms at 640 K f=2, MV/air mixture at 15 bar. So at 30
+    bar I would expect an ignition delay which is for sure will be more than 10 ms. So I am
+    surprised by the statement "For the phi = 2:0 condition, only  PC = 15 bar is considered because
+    we could not achieve TC values low enough that the ignition during the compression stroke can be
+    prevented'. Can the authors comment on this.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    The reason for this is because of physical limitations of the experimental apparatus and the
+    fuel. In particular, achieving sufficiently low temperatures on our apparatus requires
+    increasing the reaction chamber volume at the end of compression, which in turn requires
+    substantially higher initial pressures to reach the EOC pressure of \SI{30}{\bar}. The initial
+    pressure in the RCM reaction chamber is limited by the pressure in the mixing tank, and the
+    total pressure in the mixing tank is limited by the vapor pressure of MV at the preheat
+    temperature. The combination of these factors meant that we could not prepare a mixture with
+    sufficiently high tank pressure to enable repeated experiments with the EOC volume required to
+    reach temperatures where the ignition delay would be measurable. However, we feel that this
+    explanation would only confuse the manuscript, so we omit it.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    The comparison of ignition delays of MV from current work and that of Hadj-Ali et al .[9] would
+    be helpful.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    The ignition delays of MV measured in the work of \citet{Hadj-Ali2009} were conducted at several
+    pressures and roughly a single EOC temperature (near \SI{815}{\K}). However, none of the
+    pressures considered in that study match the pressures considered in our study, so we feel that
+    including the data on one of our existing plots would be very confusing. Moreover, the influence
+    of facility-specific effects make a direct comparison of ignition delays from different RCMs
+    somewhat challenging, particularly without an accurate chemical kinetic model to capture the
+    facility effects. Therefore, we have not added a figure with this comparison.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    On discussion related to Dievart model in figure 5, it is surprising that phi=0.25 and phi=0.5
+    simulations show NTC but phi=1 and phi=2 simulations do not. The trend is counter intuitive as
+    the cool flame chemistry and NTC response are expected to increase with increase in equivalence
+    ratio. This needs to be clarified. My guess is that the location of the NTC is not captured
+    accurately by model. NTC region predicted by model is shifted to high temperatures where
+    ignition is observed in RCM simulations. Showing Adiabatic constant volume simulations to
+    understand the location of NTC at different equivalence ratios.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    We agree with the reviewer that the location of the NTC region with respect to inverse
+    temperature is not well captured by the model. It does seem as though the NTC has been shifted
+    to higher temperatures with respect to the data, in addition to the model being too reactive.
+    This is supported by the newly added \cref{fig:conv-comparison}, which compares adiabatic,
+    constant volume simulations with the RCM simulations from \cref{fig:simulation-comparison}. It
+    is apparent from this figure that the predicted ignition delays in the $P_C = \SI{15}{\bar}$,
+    $\phi = \num{2.0}$ and the $P_C = \SI{30}{\bar}$, $\phi = \num{1.0}$ simulations fall on the low
+    temperature side of the NTC, while the $P_C = \SI{15}{\bar}$, $\phi =$ \numlist{0.25;0.50}
+    simulated ignition delays are on the high-temperature side of the NTC, but approaching the NTC
+    range such that they start to assume the characteristic curvature as the temperature decreases.
+    In addition to the figure, we have added some text near line 290 to clarify this point.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    Figure 5 caption could also be revised.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    We have modified the text of the caption of \cref{fig:simulation-comparison} to read:
+
+    \begin{quote}
+        %
+        ``Comparison of experimental and simulated ignition delays computed using the procedure
+        described in \cref{sec:experimental-modeling}. a) \SI{15}{\bar}, b) \SI{30}{\bar}.''
+        %
+    \end{quote}
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    From Figure 5a for phi=2, 15 bar and  fig. 5b phi=1, 30 bar the  Dievart et al. model
+    consistently under predicts the ignition delays which contradicts the statement "While the
+    model of Dievart et al. [15] over-predicts the first-stage ignition delay, it also over-predicts
+    the first-stage pressure rise, thereby leading  to rapid overall ignition." This needs to be
+    revised.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    This statement has been removed from the manuscript.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    On discussion related to RMG model from Figure 5, the authors state " model over-predicts the
+    low-temperature ignition delays and does not predict.." define low temperature ignition delays."
+    The ignition delays from RMG model and experiments cross over around 720 K so the statement that
+    low temp. ignition delays are overpredicted is not completely accurate.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    In this context, we are defining low temperature ignition delays as those to the right of the
+    experimental NTC region on the Arrhenius plot. We have added the following text near line 308:
+
+    \begin{quote}
+        ``... the RMG model tends to over-predict the low-temperature ignition delays (i.e., those to the right of the experimental NTC region on the Arrhenius plot)...''
+    \end{quote}
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    Regarding the heat of formation shown in Table 3, it is interesting that the heat of formation
+    of radical 3 and 4 estimated by RMG are different. I would request the authors check their
+    numbers.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    We have checked the values for the estimates in the mechanism, and they are identical to the
+    values in \cref{tab:heat-of-formation} and further identical to the values available from the
+    RMG website at \url{http://rmg.mit.edu}. As such, no changes have been made to the manuscript in
+    response to this comment.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    The authors use the branching ratios of fuel decomposition to fuel radicals to state the
+    importance of fuel chemistry in the current work. The relative consumption shown in Table 4
+    demonstrates that the branching ratios do not exhibit strong sensitive to thermochemistry which
+    is supported by the fact that RMG and RMG switched show nearly identical branching ratios. I am
+    not convinced that the importance of the thermochemistry is elucidated by the current discussion
+    related to Table 4 and the discussion in my opinion does not provide any kinetic insights. May
+    be the discussion could be removed.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    We have clarified the discussion of this point. In particular, we have emphasized that the
+    results show that both the thermochemistry and reaction pathways are important, and cannot
+    easily be disentangled from each other, requiring a thorough, detailed investigation of the
+    methyl valerate reaction system which we consider outside the scope of the present work. In
+    addition, we have noted that improper prediction of the thermochemistry of species may affect
+    the RMG model in particular, due to the rate-based algorithm used in RMG, which may miss
+    important reactions if the thermochemistry is not accurate. We have modified the text beginning
+    near line 394, but do not copy the modification here for space.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    Alternatively, it would be interesting to compare the thermochemistry of the low temperature
+    chemistry related reactions (RO2 chemistry) from models and ab-initio works like those Hayes and
+    Burgess and also try adopting the reaction rates from ab-initio calculations and see to if the
+    mechanism performance improves.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    We feel that the poor performance of both mechanisms indicates that a thorough and detailed
+    study of the entire methyl valerate system is warranted, and small modifications, such as the
+    replacement of only a few rates related to low-temperature chemistry, will not be sufficient to
+    significantly improve the performance of the model. In addition, we feel that such ad-hoc
+    replacement of rates without detailed study, even if it should improve the performance, could
+    not be shown to be anything more than fortuitous without further study, which is outside the
+    scope of the present work. Finally, in a separate work, Di\'{e}vart et al. (Combustion and
+    Flame, 159 (5) 1793--1805, 2012) note that ``preliminary tests with up-to-date kinetic
+    parameters [including the work of Hayes and Burgess] for the generic low temperature scheme have
+    shown an enhancement of the fuel reactivity at the end of the NTC region.'' Since the model
+    already over-predicts the reactivity of the RCM data, particularly at the end of the NTC region,
+    further enhancement is not likely to improve agreement.
+
+    Therefore, we have not included these modifications in the manuscript; we have, however, added a
+    note to the end of the discussion that references the work of \citet{Hayes2009} to indicate that
+    some of the necessary detailed work has been started.
+    %
+\end{response}
+
+\noindent \textbf{Reviewer \#2:}
+
+\begin{reviewer}
+    %
+    The measurement of Methyl Valerate at these temperature and pressure conditions constitutes
+    important work and the manuscript of well laid out and has potential to be widely circulated.
+    The arguments in the article are sound and the figures are clear.
+    %
+\end{reviewer}
+
+\begin{response}
+    Thank you for your comments. A detailed response is below.
+\end{response}
+
+\begin{reviewer}
+    %
+    I would like to ask the authors to check one item definitively before the article is published.
+    I am concerned that at these higher pressures and equivalence ratios close to 1, there would be
+    ignition which occurs during the compression stroke. This would not be noticed if some of the
+    fuel condenses during the charging process and thereby you are dealing with lean mixtures than
+    those cited in the paper. The authors are encouraged to make sure this is not the case by
+    possibly sampling the charge after filling through a GC or by a quantitative absorption method
+    as that used routinely by Stanford.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    With regards to ignition during the compression stroke, we have compared each reactive pressure
+    trace to its corresponding non-reactive trace and found they are in good agreement until the end
+    of compression, indicating that there is no heat release during the compression stroke. With
+    regards to the filling process, we have thoroughly checked the temperatures throughout the
+    apparatus and found them to be quite consistent, including the mixing tanks, the piping
+    connections, and the reaction chamber itself. Moreover, we have conducted several studies in the
+    past utilizing GC to determine mole fractions of components. All of these studies determined
+    that the vaporization procedure used on this apparatus is sufficient to produce a homogeneous
+    mixture of fuel and oxidizer, even for fuels with relatively low vapor pressures. We have added
+    references to these prior studies in the present manuscript near line 105:
+
+    \begin{quote}
+        %
+        ``Previous work has shown this procedure to completely vaporize the fuel and prevent fuel
+        cracking during the heating process \cite{Weber2011a,Kumar2009,Das2012}.''
+        %
+    \end{quote}
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    In the future, a possible direct charging method might be encouraged instead of a mix vessel.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    As we do not think it is appropriate to digress to specific discussion of various mixture
+    preparation methods in this response or in the manuscript, we simply note in passing that each
+    method has its own advantages and disadvantages, and each method should be used where its
+    advantages provide the most benefit. We feel that such discussion in the manuscript would be
+    beyond the scope of the current work, and we have not made any changes in response to this
+    comment.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    It would also be good to include some of the pressure profiles so that others in the community
+    can check.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    Pressure profiles are available in the data files that will be posted on the Combustion
+    Diagnostics Laboratory website and on FigShare, with URLs given in the manuscript. We have
+    endeavored to provide the community with all of the information necessary to reproduce these
+    experiments, including the pressure traces and versions of software packages used in the
+    processing. Moreover, we include several pressure traces with discussion in
+    \cref{sec:pressure-traces} of the manuscript. As such, no changes have been made to the
+    manuscript in response to this comment.
+    %
+\end{response}
+
+\noindent\textbf{Reviewer \#3:}
+
+\begin{reviewer}
+    %
+    The authors perform a shock tube study measuring ignition delay times of methyl pentanoate, and
+    compare with a kinetic model taken from the literature and one they generated using a Reaction
+    Mechanism Generator, showing that neither model can predict the ignition data satisfactorily;
+    they investigate and discuss possible reasons, but (very reasonably) leave solving this
+    discrepancy as an open challenge to the combustion modeling community.
+    %
+\end{reviewer}
+
+\begin{response}
+    Thank you for your comments. Detailed responses to each comment are presented below.
+\end{response}
+
+\begin{reviewer}
+    %
+    I would suggest using the preferred IUPAC name "Methyl pentanoate" in the title (and mentioning
+    the common name "Methyl valerate" in the abstract and a keyword).
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    We have modified the title to read ``Experiments and Modeling of the Autoignition of Methyl
+    Pentanoate at Low to Intermediate Temperatures and Elevated Pressures in a Rapid Compression
+    Machine'', as the reviewer suggests. Methyl valerate and methyl pentanoate are already keywords.
+    We have opted to retain methyl valerate as the primary name used for the compound throughout the
+    text because of the convenient MV acronym (MP is ambiguous, because it could mean methyl
+    propanoate as well).
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    Regarding: > "available on the web at https://combdiaglab.engr.uconn.edu/database/rcm-database
+    and on figshare at https://doi.org/10.6084/m9.figshare.5213341. In addition, ChemKED-format [33]
+    files are available in the main ChemKED database repository at
+    https://github.com/pr-omethe-us/ChemKED-database."
+
+    None of the links work or contain the relevant data. Presumably the authors embargoed it and
+    plan to post it upon acceptance of the manuscript.
+
+    But I am pleased to see this sharing of data, as well as the extensive supplementary materials
+    aiding in reproducible science. Bravo.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    This is indeed the case, and the relevant files will be posted after acceptance. We have double
+    checked that the URLs are correct, just in case. Thank you for your kind words.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    Regarding: > "At 15 bar, the experimental ignition delays are under-predicted by the Di\'{e}vart et
+    al. [15] model for the three equivalence ratios shown. For the <phi> = 0.25 and 0.5 conditions,
+    the model appears to be predicting an NTC region of the ignition delays as the temperature
+    decreases"
+
+    Figure 5 does not show, to my eye, any NTC behaviour in the simulations, as asserted in this
+    sentence. Perhaps if the simulations were plotted at a wider range of temperatures (they're
+    simulations, so no experimental reason not to?) this may show up, but at present I feel the
+    figure does not support this statement. For <phi>=0.5 simulations are not even plotted over the
+    whole range of the experimental data, let alone extrapolated to lower temperatures where NTC may
+    be predicted.
+    %
+\end{reviewer}
+
+\begin{response}
+    %
+    We interpret the increasing curvature of the model response for the $P_C = \SI{15}{\bar}$, $\phi =$
+    \numlist{0.25;0.5} conditions as the beginning of an NTC region. The RCM simulations are not
+    extrapolated because they use the volume profile associated with a single experiment. However,
+    the simulations are plotted over the whole range of the $\phi = \num{0.5}$ experiments; the
+    large discrepancy between the simulations and experiments causes the illusion that the whole
+    range is not covered.
+
+    In addition, we have added a new \cref{fig:conv-comparison} that compares adiabatic, constant
+    volume simulations with the model of \citet{Dievart2013} with the RCM simulations presented in
+    \cref{fig:simulation-comparison}. The adiabatic, constant volume simulations can be extrapolated
+    over a wide range of temperatures. From \cref{fig:conv-comparison}, it can be seen that the
+    curvature in the RCM simulations at $P_C = \SI{15}{\bar}$, $\phi =$ \numlist{0.25;0.5} is
+    related to the NTC region of the ignition delay, while the lack of curvature in the $P_C =
+    \SI{15}{\bar}$, $\phi = \num{2.0}$ and the $P_C = \SI{30}{\bar}$, $\phi = \num{1.0}$ simulations
+    is because those lie on the low-temperature side of the predicted NTC.
+    %
+\end{response}
+
+\begin{reviewer}
+    %
+    I have other questions about possible causes of the discrepancies, but answering them is beyond
+    the reasonable scope of this paper, and the fact that I have them is a good sign regarding the
+    potential impact of this paper. I think people will find it interesting.
+    %
+\end{reviewer}
+
+\begin{response}
+    Thank you again for your comments. We are also interested in the resolution of these questions,
+    but we agree that they are out of scope for this work.
+\end{response}
+
+\end{document}

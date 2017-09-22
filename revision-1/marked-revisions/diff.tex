@@ -1,0 +1,750 @@
+\documentclass[letterpaper, review, sort&compress]{elsarticle}
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL methyl-valerate_old.tex   Tue Jul 18 13:54:46 2017
+%DIF ADD methyl-valerate.tex       Wed Sep 20 21:21:51 2017
+
+\journal{Fuel}
+
+\usepackage{multirow}
+
+\usepackage{lineno}
+
+\usepackage{enumitem}
+\setlist{noitemsep}
+
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\sisetup{
+    separate-uncertainty=true,
+    per-mode=symbol
+}
+
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepgflibrary{fpu}
+
+\usepackage[tableposition=top]{caption}
+\usepackage{booktabs}
+\usepackage{mathtools}
+
+\newcommand*{\logten}{\mathop{\log_{10}}}
+
+\DeclareSIUnit\torr{Torr}
+\DeclareSIUnit\atm{atm}
+\DeclareSIUnit\calorie{cal}
+
+\bibliographystyle{elsarticle-num-CNF}
+\usepackage{doi}
+\usepackage[capitalize]{cleveref}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+%======================================================================
+\begin{frontmatter}
+\title{ Experiments and Modeling of the Autoignition of Methyl \DIFdelbegin \DIFdel{Valerate }\DIFdelend \DIFaddbegin \DIFadd{Pentanoate }\DIFaddend at Low to Intermediate Temperatures and Elevated Pressures in a Rapid Compression Machine }
+
+\author[uconn]{Bryan W.\ Weber\corref{cor1}}
+\author[uconn]{Justin A.\ Bunnell}
+\author[idaho]{Kamal Kumar}
+\author[uconn]{Chih-Jen Sung}
+\address[uconn]{Department of Mechanical Engineering, University of Connecticut, Storrs, CT, USA}
+\address[idaho]{Department of Mechanical Engineering, University of Idaho, Moscow, ID, USA}
+\cortext[cor1]{Corresponding Author: bryan.weber@uconn.edu}
+
+%====================================================================
+\begin{abstract} % not to exceed 200 words
+
+    Methyl valerate (\ce{C6H12O2}, methyl pentanoate) is a methyl ester and a relevant surrogate
+    component for biodiesel. In this work, we present ignition delays of methyl valerate measured
+    using a rapid compression machine at a range of engine-relevant temperature, pressure, and
+    equivalence ratio conditions. The conditions we have studied include equivalence ratios
+    \((\phi)\) from \numrange{0.25}{2.0}, temperatures between \SIlist{680;1050}{\K}, and pressures
+    of \SIlist{15;30}{\bar}. The ignition delay data demonstrate a negative temperature coefficient
+    region in the temperature range of \SIrange[range-phrase={--}]{720}{800}{\K} for both
+    \(\phi=2.0\), \SI{15}{\bar} and \(\phi=1.0\), \SI{30}{\bar}, with two-stage ignition apparent
+    over the narrower temperature ranges of \SIrange[range-phrase={--}]{720}{760}{\K} for
+    \SI{15}{\bar} and \SIrange[range-phrase={--}]{740}{760}{\K} at \SI{30}{\bar}. In addition, the
+    experimental ignition delay data are compared with simulations using an existing chemical
+    kinetic model from the literature. The simulations with the literature model under-predict the
+    data by factors between \numlist{2;10} over the entire range of the experimental data. In
+    addition, a new chemical kinetic model is developed using the Reaction Mechanism Generator (RMG)
+    software. The agreement between the experimental data and the RMG model is also not
+    satisfactory. To help determine the possible reasons for the disagreement, a path analysis of
+    both models is completed. It is found that improvements to both the reaction pathways and
+    thermodynamic properties are required. Further directions for future improvement of the methyl
+    valerate model are discussed.
+
+\end{abstract}
+
+% (Provide 2-4 keywords describing your research. Only abbreviations firmly
+% established in the field may be used. These keywords will be used for
+% sessioning/indexing purposes.)
+\begin{keyword}
+    chemical kinetics\sep rapid compression machine\sep autoignition\sep methyl ester\sep methyl valerate\sep methyl pentanoate
+\end{keyword}
+\end{frontmatter}
+%======================================================================
+
+\linenumbers
+
+\section{Introduction}\label{sec:introduction}
+
+For transportation applications, biodiesel is an important constituent in improving environmental
+friendliness of fuels. This is due to its renewability when produced from sustainable agricultural
+crops and its ability to reduce emissions relative to petroleum-derived fuels~\cite{Hoekman2012}.
+Biodiesel typically consists of long-chain methyl ester molecules, with typical compositions of
+\ce{C14} to \ce{C20}~\cite{Hoekman2012}. Recognizing that the large molecular size of the methyl
+esters within biodiesel fuel makes creating and using detailed chemical kinetic models
+challenging~\cite{Lai2011}, it is desired to study their combustion chemistry by studying simpler
+methyl ester molecules.
+
+A recent review paper summarizes the work on methyl esters relevant to biodiesel
+combustion~\cite{Coniglio2013}; the following summary focuses on ignition delay measurements, since
+these are the focus of this paper. Autoignition of methyl butanoate (MB, \ce{C5H10O2}) has been
+well-studied in both shock tube and rapid compression machine experiments~
+\cite{Metcalfe2007,Walton2009,Dooley2008,Akih-Kumgeh2010,Akih-Kumgeh2011,Hadj-Ali2009,Kumar2016}.
+The prevalence of MB data in the literature is largely due to the early identification of MB as a
+potential surrogate fuel for biodiesel~\cite{Fisher2000}. However, the experiments have shown that
+MB may not be an appropriate surrogate for biodiesel, due to its lack of negative temperature
+coefficient (NTC) behavior, a requirement for a suitable biodiesel surrogate~\cite{Coniglio2013}.
+
+Methyl esters larger than MB, such as methyl valerate (MV, \ce{C6H12O2}, methyl pentanoate), have
+also been studied as possible biodiesel surrogates. \citet{Hadj-Ali2009} used a rapid compression
+machine (RCM) to study the autoignition of several methyl esters including MV. Although MV exhibited
+two-stage ignition in this study, little additional research has been done on its low-temperature
+chemistry. \citet{Korobeinichev2015} studied MV in premixed laminar flames and extended a detailed
+high temperature chemical kinetic model to include MV and methyl hexanoate. \citet{Dmitriev2015}
+added MV to n-heptane/toluene fuel blends to determine the resulting intermediate species in
+premixed flames using a flat burner at \SI{1}{atm} and an equivalence ratio of 1.75. The addition of
+MV helped reduce soot forming intermediates including benzene, cyclopentadienyl, acetylene,
+propargyl, and vinylacetylene~\cite{Dmitriev2015}. \citet{Hayes2009} computationally examined the
+peroxy radical isomerization reactions for MV to better understand the low temperature reaction
+pathways. Finally, \citet{Dievart2013} used diffusion flames in the counterflow configuration to
+determine extinction limits for a number of methyl esters, including MV, and validated a detailed
+kinetic model with the experimental data.
+
+This work provides additional data for the autoignition of MV. Data is collected in a RCM under
+engine relevant conditions spanning from \SIrange{15}{30}{\bar}, equivalence ratios \((\phi)\) from
+\numrange{0.25}{2.0}, and temperatures from \SIrange{680}{1050}{\K}. The NTC region of MV is mapped
+out to provide additional information on the fidelity of using MV as a biodiesel surrogate \DIFaddbegin \DIFadd{and on
+the autoignition chemistry of large methyl esters}\DIFaddend .
+
+\section{Experimental Methods}\label{sec:experimental-methods}
+
+The RCM used in this study is a single piston arrangement and is pneumatically driven and
+hydraulically stopped. The device has been described in detail previously~\cite{Mittal2007a} and
+will be described here briefly for reference. The end of compression (EOC) temperature and pressure
+(\(T_C\) and \(P_C\) respectively), are independently changed by varying the overall compression
+ratio, initial pressure \((P_0)\), initial temperature \((T_0)\), and specific heat ratio of the
+experiments. The piston in the reaction chamber is machined with a specially designed crevice to
+suppress the roll-up vortex effect and promote homogeneous conditions in the reactor during and
+after compression~\cite{Mittal2006}.
+
+The primary diagnostic on the RCM is the in-cylinder pressure measured by a Kistler 6125C dynamic
+transducer that is compensated for thermal shock. The transducer is coupled to a Kistler 5010B
+charge amplifier. The voltage output of the charge amplifier is recorded by a National Instruments
+9125 analog input device connected to a cDAQ 9178 chassis. The voltage is sampled at a rate of
+either 50 kHz or 100 kHz by a LabView VI and processed by a Python package called
+UConnRCMPy~\cite{Weber2016a}. Version 3.0.5 of UConnRCMPy~\cite{uconnrcmpy}, 3.6 of Python, 2.3.0
+of Cantera~\cite{cantera}, 1.13.0 of NumPy~\cite{vanderWalt2011}, 0.19.0 of SciPy~\cite{Jones2001},
+and 2.0.1 of Matplotlib~\cite{Hunter2007} are used in the analysis in this paper.
+
+\begin{center}
+    \captionsetup{type=figure}
+    \includegraphics{figures/ignition_delay_definition.pdf}
+    \caption{Definition of the ignition delays used in this work. The
+    experiment in this figure is conducted for a \(\phi=2.0\) mixture with
+    \mbox{\(\ce{Ar}/(\ce{N2}+\ce{Ar})=0.5\)}, \(P_0=\SI{0.7806}{\bar}\),
+    \(T_0=\SI{373}{\K}\), \(P_C=\SI{14.92}{\bar}\), \(T_C=\SI{720}{\K}\),
+    \(\tau=\SI{27.56\pm0.89}{\ms}\), and \(\tau_1=\SI{16.60\pm0.46}{\ms}\).}
+    \label{fig:ign-delay-def}
+\end{center}
+
+The compression stroke of the RCM brings the fuel/oxidizer mixture to the EOC conditions, and for
+suitable thermodynamic states, the mixture will ignite after a delay period. The definitions of the
+ignition delays are shown in \cref{fig:ign-delay-def}. The time of the EOC is defined as the maximum
+of the pressure trace prior to the start of ignition and the ignition delays are defined as the time
+from the EOC until local maxima in the first time derivative of the pressure. Each experimental
+condition is repeated at least five times to ensure repeatability of the data. As there is some
+random scatter present in the data, the standard deviation \((\sigma)\) of the ignition delays from
+the runs at a given condition is computed. Typically, \(\sigma\) is less than \SI{10}{\percent} of
+the mean values of the overall ignition delay \((\tau)\) and the first stage ignition delay
+\((\tau_1)\).
+
+In addition to the reactive experiments, non-reactive experiments are conducted by replacing \ce{O2}
+with \ce{N2} to determine the influence of machine-specific behavior on the experimental conditions
+and permit the calculation of the EOC temperature via the isentropic relations between pressure and
+temperature~\cite{Lee1998}. The EOC temperature is calculated by the procedure described in
+\cref{sec:computational-methods}.
+
+The mixtures considered in this study are shown in \cref{tab:mixtures}. Four equivalence ratios of
+MV in ``air'' are considered. While \ce{O2} is kept at \SI{21}{\percent} by mole in the oxidizer,
+the ratio of \(\ce{Ar}:\ce{N2}\) in the oxidizer is varied to adjust the temperatures reached at the
+EOC. Two \(P_C\) conditions are studied in this work, \SIlist{15;30}{\bar}, representing
+engine-relevant conditions. For the \(\phi=2.0\) condition, only \(P_C = \SI{15}{\bar}\) is
+considered because we could not achieve \(T_C\) values low enough that the ignition during the
+compression stroke can be prevented.
+
+\begin{center}
+    \captionsetup{type=table}
+    \caption{Mixtures considered in this work}
+    \begin{tabular}{Sccccc}
+        \toprule
+        {\(\phi\)} & \multicolumn{4}{c}{Mole Fraction (purity)} & \ce{Ar}/(\ce{N2} + \ce{Ar}) \\
+        \cmidrule{2-5}
+         & \ce{MV} (\SI{100}{\percent}) & \ce{O2} (\SI{99.994}{\percent}) & \ce{Ar} (\SI{99.999}{\percent}) & \ce{N2} (\SI{99.999}{\percent}) &  \\
+        \midrule
+        0.25 & 0.0065 & 0.2087 & 0.7848 & 0.0000 & 1.0 \\
+        0.5 & 0.0130 & 0.2074 & 0.7796 & 0.0000 & 1.0 \\
+        1.0 & 0.0256 & 0.2047 & 0.7697 & 0.0000 & 1.0 \\
+        1.0 & 0.0256 & 0.2047 & 0.3849 & 0.3848 & 0.5 \\
+        2.0 & 0.0499 & 0.1996 & 0.0000 & 0.7505 & 0.0 \\
+        2.0 & 0.0499 & 0.1996 & 0.3752 & 0.3753 & 0.5 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:mixtures}
+\end{center}
+
+Mixtures are prepared in stainless steel mixing tanks, \SI{17}{\L} and \SI{15}{\L} in size. The
+proportions of reactants in the mixture are determined by specifying the absolute mass of the fuel,
+the equivalence ratio, and the ratio of \(\ce{Ar}:\ce{N2}\) in the oxidizer. Mixtures are
+made by first vacuuming the mixing tanks to an ultimate pressure less than \SI{5}{\torr}. Since MV
+is a liquid with a relatively small vapor pressure at room temperature and pressure, it is measured
+gravimetrically to within \SI{0.01}{\g} of the specified value. The fuel is injected into the mixing
+tank through a septum. Proportions of \ce{O2}, \ce{Ar}, and \ce{N2} are added manometrically at room
+temperature and the total pressure is measured by an Omega Engineering MMA100V10T2D0T4A6 type static
+pressure transducer. The same transducer is used to measure the pressure of the reactants prior to
+an experiment.
+
+The RCM is equipped with heaters to control the initial temperature of the mixture. After filling in
+the components to the mixing tanks, the heaters are switched on and the system is allowed
+\SI{1.5}{\hour} to come to steady state. The mixing tanks are also equipped with magnetic stir bars
+so the reactants are well mixed for the duration of the experiments. \DIFaddbegin \DIFadd{Previous work has shown this
+procedure to completely vaporize the fuel and prevent fuel cracking during the heating process
+\mbox{%DIFAUXCMD
+\cite{Weber2011a,Kumar2009,Das2012}}\hspace{0pt}%DIFAUXCMD
+.
+}\DIFaddend 
+
+\begin{center}
+    \captionsetup{type=figure}
+    \input{figures/vapor_pressure.pgf}
+    \caption{Saturated vapor pressure of MV as a function of temperature,
+    plotted using the Antoine equation, \cref{eq:antoine}, with
+    \(A=6.4030\), \(B=1528.69\), and \(C=52.881\).}
+    \label{fig:vapor-pressure}
+\end{center}
+
+The initial temperature is chosen such that the saturated vapor pressure \((P_{\text{sat}})\) of the
+fuel at the initial temperature is at least twice the partial pressure of the fuel in the mixing
+tank. The Antoine equation
+%
+\begin{equation}\label{eq:antoine}
+    \logten{P_{\text{sat}}} = A - \frac{B}{T - C}
+\end{equation}
+%
+is used to model the saturated vapor pressure of MV as a function of temperature \((T)\), where
+\(A\), \(B\), and \(C\) are substance-specific coefficients\DIFaddbegin \DIFadd{, given in units of \si{\kelvin} and
+\si{\kPa}}\DIFaddend . Coefficients for \cref{eq:antoine} are given in the literature by~\citet{Ortega2003},
+\citet{Camacho2007}, and~\citet{Stephenson1987}. Unfortunately, the values of the coefficients are
+different among all three references. Therefore, coefficients for use in \cref{eq:antoine} are
+determined in this work by least squares fitting of the data of \citet{Ortega2003},
+\citet{vanGenderen2002}, and \citet{Verevkin2008} using the \verb|curve_fit()| function of
+SciPy~\cite{Jones2001} version 0.19.0. \Cref{fig:vapor-pressure} shows that the coefficients fitted
+with this procedure give good agreement with the experimental data; values for the coefficients
+computed in this work and in the literature works are given in \cref{tab:antoine}. The data and code
+used to calculate the coefficients are provided in the Supplementary Material.
+
+\begin{center}
+    \captionsetup{type=table}
+    \caption{Antoine Equation coefficients computed in this work and from the
+    literature\DIFaddbegin \DIFadd{, in units of \si{\kelvin} and \si{\kPa}}\DIFaddend . The $2\sigma$ confidence interval is
+    estimated by taking the square root of the diagonals of the covariance matrix returned from
+    \texttt{curve\_fit()}}
+    \label{tab:antoine}
+    \begin{tabular}{cccccc}
+        \toprule
+        & $A$ & $B$ & $C$ & $T_{\text{min}}$, \si{\K} & $T_{\text{max}}$, \si{\K} \\
+        \midrule
+        This Work & 6.4030 & 1528.69 & 52.881 & 274.9 & 417.18 \\
+        $2\sigma$ Confidence Interval & 0.0919 & 53.47 & 4.934 & --- & --- \\
+        \citet{Ortega2003} & 6.23175 & 1429.00 & 62.30 & 364.75 & 417.18 \\
+        \citet{Camacho2007} & 5.9644 & 1281.06 & 75.94 & 281 & 547 \\
+        \citet{Stephenson1987} & 6.62646 & 1658.4 & 42.09 & 297 & 411 \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+\section{Computational Methods}\label{sec:computational-methods}
+\subsection{RCM Modeling}\label{sec:experimental-modeling}
+
+The Python 3.6 interface of Cantera~\cite{cantera} version 2.3.0 is used for all simulations in this
+work. Detailed descriptions of the use of Cantera for these simulations can be found in the work
+of~\citet{Weber2016a} and~ \citet{Dames2016}; a brief overview is given here. As mentioned in
+\cref{sec:experimental-methods}, non-reactive experiments are conducted to characterize the
+machine-specific effects on the experimental conditions in the RCM. This pressure trace is combined
+with the reactive pressure trace and used to compute a volume trace by assuming that the reactants
+undergo a reversible, adiabatic, constant composition (i.e., isentropic) compression during the
+compression stroke and an isentropic expansion after the EOC. The volume trace is applied to a
+simulation conducted in an \verb|IdealGasReactor| in Cantera~\cite{cantera} using the CVODES solver
+from the SUNDIALS suite~\cite{Hindmarsh2005}. The ignition delays from the simulations are defined
+in the same manner as in the experiments. The time derivative of the pressure in the simulation is
+computed by second order Lagrange polynomials, as discussed by \citet{Chapra2010}. The volume trace
+files, the corresponding pressure traces, and \texttt{volume-trace.yaml} files suitable for use with
+UConnRCMPy v3.0.5~\cite{uconnrcmpy} are available on the web at
+\url{https://combdiaglab.engr.uconn.edu/database/rcm-database} and on figshare at
+\url{https://doi.org/10.6084/m9.figshare.5213341}. In addition, ChemKED-format~\cite{Weber2017}
+files are available in the main ChemKED database repository at
+\url{https://github.com/pr-omethe-us/ChemKED-database}.
+
+
+To the best of our knowledge, there are three mechanisms for MV combustion available in the
+literature. The first two, by \citet{Korobeinichev2015} and \citet{Dmitriev2015}, were developed to
+simulate flames, and do not include the low-temperature chemistry necessary to simulate the
+conditions in these experiments. The third model was developed by \citet{Dievart2013} and includes
+low-temperature chemistry of MV, although it was only validated by comparison with flame extinction
+limits. In converting this mechanism for use in Cantera, we found that there were many species in
+the thermodynamic database with multiple data entries. For most of these species the thermodynamic
+data is identical. However, some species are not exact duplicates. For these species, it is not
+clear from the thermodynamic database file which data set should be preferred. Since Cantera (and
+CHEMKIN) choose the first instance of a duplicate species to be used, we retained the first entry
+for all duplicated species. The detailed model of \citet{Dievart2013} includes 1105 species and 7141
+reactions, and the Cantera formatted input file is available in the Supplementary Material.
+
+\subsection{Reaction Mechanism Generator}\label{sec:reaction-mechanism-generator}
+
+In addition to using a mechanism from the literature, we investigate the use of an automatic
+mechanism generator, the open-source Reaction Mechanism Generator (RMG)~\cite{Allen2012} version
+2.1.0. The Python version of RMG is used, which requires Python 2.7, and version 2.1.0 of the RMG
+database is used. The final RMG model contains 427 species and 13640 reactions. Note that the number
+of species is much lower than the \citet{Dievart2013} model because the RMG model focuses on only
+one fuel (MV), but the number of reactions is substantially higher. The input file used to generate
+the model is available in the Supplementary Material. In addition, the CHEMKIN and Cantera formatted
+input files for the RMG model are available in the Supplementary Material.
+
+\section{Experimental Results}\label{sec:experimental-results}
+\subsection{Ignition Delays}\label{sec:ignition-delays}
+
+\Cref{fig:ignition-delays} shows the ignition delay results measured in this study. Filled markers
+denote the overall ignition delay and hollow markers indicate the first-stage ignition delay.
+Vertical error bars are drawn on the symbols to represent the \(2\sigma\) uncertainty in the
+ignition delay; for many of the experiments, the uncertainty is approximately the same size as the
+data point, so the error bar is hidden. Horizontal error bars are shown on the first and last points
+of each equivalence ratio indicating the estimated uncertainty in the EOC temperature of
+$\pm\SI{1}{\percent}$~\cite{Weber2015}. \cref{fig:ignition-delays}a shows the results for a
+compressed pressure of \SI{15}{\bar}, while \cref{fig:ignition-delays}b shows the results for a
+compressed pressure of \SI{30}{\bar}. Note that $\phi=2.0$ results were not collected for
+\SI{30}{\bar}, so there are no red triangle data points in \cref{fig:ignition-delays}b. A summary of
+the ignition delay data is available as a comma-separated value file in the Supplementary Material.
+
+It can be seen from \cref{fig:ignition-delays} that the ignition delays for the \(\phi=0.25\text{
+and } 0.5\) mixtures do not show an NTC region of the ignition delay for both of the pressures
+studied in this work. However, the \(\phi=1.0\) mixture shows an NTC region at
+\(P_C=\SI[number-unit-product={\ }]{30}{\bar}\) between approximately \SIlist{720;800}{\K}, with
+measured first-stage ignition delays at \SIlist{733;757}{\K}. In addition, the \(\phi=2.0\) mixture
+shows an NTC region of ignition delay at \SI{15}{\bar} from approximately \SIrange{720}{780}{\K},
+with measured first-stage ignition delays between \SIlist{720;750}{\K}.
+
+\begin{center}
+    \captionsetup{type=figure}
+    \includegraphics{figures/ignition-delays.pdf}
+    \caption{Ignition delays of MV as a function of inverse temperature for varying equivalence
+    ratios. Filled points are the overall ignition delays and hollow points are the first stage
+    ignition delays. a) \SI{15}{\bar}, b) \SI{30}{\bar}.}
+    \label{fig:ignition-delays}
+\end{center}
+
+\citet{Hadj-Ali2009} also observed two-stage ignition of MV in stoichiometric mixtures, stating that
+``[m]ethyl pentanoate... was more reactive [than methyl butanoate] with a limit below which
+autoignition no longer occurs observed at \(T_c = \SI{670}{\K}\) and \(P_c = \SI{11.4}{\bar}\). At
+this temperature, the autoignition occurred in two stages with a clearly identified cool flame
+event.'' However, we do not find two stage ignition for the similar pressure of
+\(P_C = \SI{15}{\bar}\) in this study. We note that the stated temperature of the experiment from
+the work of \citet{Hadj-Ali2009} (\SI{670}{\K}) is much lower than the lowest temperature we
+considered in this work at \SI{15}{\bar}, \(\phi=1.0\) (\SI{828}{\K}). We did not conduct
+experiments at lower temperatures because the work of \citet{Mittal2006} showed that the temperature
+field in the RCM reaction chamber was uniform for approximately \SI{100}{\ms} after the EOC, and our
+measured ignition delay at \SI{15}{\bar}, \(\phi=1.0\), and \SI{828}{\K} is \SI{92.14}{\ms}.
+
+However, we note NTC behavior of the ignition delay and two-stage ignition at the higher pressure of
+\SI{30}{\bar}, and at higher temperatures than those reported for two-stage ignition in the study of
+\citet{Hadj-Ali2009}. The trend of NTC behavior shifting to higher temperatures with increasing
+pressure can be seen in other classes of fuels. \citet{Kukkadapu2012} found a similar trend in
+gasoline composed of iso-alkanes, n-alkanes, cyclo-alkanes, aromatics, and olefins.
+\citet{Kukkadapu2012} attributed the shift of the NTC region to the reactions between the
+hydroperoxyalkyl radical (\ce{QOOH}) and \ce{O2} becoming more dominant than the unimolecular
+decomposition of \ce{QOOH} at higher pressures. Similar trends could occur for the hydroperoxyalkyl
+radicals of MV.
+
+To further understand the effect of the methyl ester functional group on the NTC region of ignition
+delay, we compare with the alkane and alcohol with 5-carbon alkyl chains, n-pentane and n-pentanol.
+n-Pentane and MV have the same fuel mole percentage for stoichiometric mixtures in air
+(\SI{2.56}{\percent}), while n-pentanol has a fuel mole percentage of \SI{2.72}{\percent} for
+stoichiometric conditions. \citet{Ribaucour1998} and \citet{Bugler2015} found the NTC region for
+n-pentane to be between \SIlist{760;910}{\K} at pressures near \SI{10}{\atm}. As we will compare
+with our MV data at \SI{30}{\bar}, we note that increasing the pressure tends to shift the NTC to
+higher temperatures, as mentioned previously \cite{Kukkadapu2012}. \citet{Heufer2013} found NTC
+behavior for n-pentanol in the range of \SIrange{770}{900}{\K} at \SI{30}{\bar}. In this study, we
+find the NTC window for MV at \SI{30}{\bar} to be between \SIlist{720;800}{\K}. Therefore, it
+appears that the methyl ester functional group causes the NTC range to occur at lower temperature as
+compared to alkanes and alcohols with similar alkyl chain lengths. This result was also noted by
+\citet{Hadj-Ali2009} for methyl hexanoate as the fuel.
+
+\subsection{Pressure Traces}\label{sec:pressure-traces}
+
+\Cref{fig:pressure-traces}a shows the pressure traces for selected experiments at \(\phi=1.0\),
+\(P_C =\SI[number-unit-product={\ }]{30}{\bar}\). The three reactive pressure traces shown are at
+the low-temperature end of the NTC (blue, \SI{700}{\K}), one case with two-stage ignition (orange,
+\SI{733}{\K}), and one case near the high-temperature limit of the NTC region (green, \SI{774}{\K}).
+Also shown is the non-reactive pressure trace for the \SI{700}{\K} case (red). By comparing the
+\SI{700}{\K} pressure trace with the non-reactive pressure trace, it can be seen that there is
+substantial heat release prior to main ignition as measured by the deviation of the reactive
+pressure trace from the non-reactive trace. However, there is only one peak in the time derivative
+of the pressure, so no first-stage ignition delay is defined for this case. It can also be seen in
+\cref{fig:pressure-traces}a that the \SI{774}{\K} case shows some heat release prior to ignition,
+although again there is only one peak in the time derivative of the pressure. Furthermore, the heat
+release at \SI{774}{\K} appears to be more gradual than at \SI{700}{\K}.
+
+\begin{center}
+    \captionsetup{type=figure}
+    \includegraphics[width=\textwidth]{figures/pressure-traces.pdf}
+    \caption{Selected pressure traces around the NTC region of ignition delay.
+    a) \(\phi=1.0,\ P_C=\SI{30}{\bar}\), b) \(\phi=2.0,\ P_C=\SI{15}{\bar}\)\DIFdelbegin %DIFDELCMD < }%%%
+\DIFdelend .\DIFaddbegin }
+    \DIFaddend \label{fig:pressure-traces}
+\end{center}
+
+A similar trend can be observed in \cref{fig:pressure-traces}b for \(\phi=2.0\) at
+\(P_C=\SI{15}{\bar}\), where pressure traces at several points around the NTC region are plotted. As
+in \cref{fig:pressure-traces}a, the three reactive pressure traces shown are at the low-temperature
+end of the NTC (blue, \SI{698}{\K}), one case with two-stage ignition (orange, \SI{720}{\K}), and
+one case near the high-temperature limit of the NTC region (green, \SI{782}{\K}). Also shown is the
+non-reactive pressure trace for the \SI{698}{\K} case (red). As for the \(\phi=1.0\) case, the
+pressure traces show significant heat release prior to the overall ignition, as judged by deviation
+from the non-reactive case.
+
+\section{Computational Results}\label{sec:computational-results}
+
+\Cref{fig:simulation-comparison} compares experimentally measured overall ignition delays with
+ignition delays computed with the detailed model of \citet{Dievart2013} (solid lines).
+\Cref{fig:simulation-comparison}a shows results at \(P_C = \SI{15}{\bar}\), while
+\cref{fig:simulation-comparison}b shows results at \(P_C = \SI{30}{\bar}\). Only some equivalence
+ratios are shown for each pressure condition; data and simulated results are not shown for cases
+where the reactive simulated temperature at the EOC deviated substantially from the non-reactive
+temperature due to heat release during the compression stroke. Furthermore, it is important to note
+that the model of \citet{Dievart2013} was not validated for MV ignition delays, only for extinction
+strain rates.
+
+\begin{center}
+    \captionsetup{type=figure}
+    \resizebox{\textwidth}{!}{\input{figures/simulation-comparison.pgf}}
+    \caption{Comparison of experimental and simulated \DIFdelbegin \DIFdel{results}\DIFdelend \DIFaddbegin \DIFadd{ignition delays computed using the procedure
+    described in \mbox{%DIFAUXCMD
+\cref{sec:experimental-modeling}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend . a) \SI{15}{\bar}, b) \SI{30}{\bar}\DIFdelbegin %DIFDELCMD < }%%%
+\DIFdelend .\DIFaddbegin }
+    \DIFaddend \label{fig:simulation-comparison}
+\end{center}
+
+At \SI{15}{\bar}, the experimental ignition delays are under-predicted by the \citet{Dievart2013}
+model for the three equivalence ratios shown. For the \(\phi =\) \numlist{0.25;0.5} conditions, the
+model appears to be predicting an NTC region of the ignition delays as the temperature decreases, \DIFaddbegin \DIFadd{as
+judged by the increasing curvature of the simulations, }\DIFaddend although such a trend is not observed in the
+data. However, at \(\phi = 2.0\), the model does not predict the presence of an NTC region, although
+one is present in the experiments. Nonetheless, the agreement seems to be improving as the
+temperature is decreased. Comparing the \citet{Dievart2013} model to the stoichiometric data at
+\SI{30}{\bar}, we find a similar trend as the \(\phi=2.0,\ P_C=\SI{15}{\bar}\) data. The model does
+not predict the NTC region found experimentally for the \(\phi = 1.0\) experiments, but the
+agreement improves as the temperature decreases. Interestingly, two-stage ignition is predicted for
+all of the \(\phi=1.0\) and \(\phi=2.0\) data shown in \cref{fig:simulation-comparison}. However,
+the first-stage ignition delays are \SIrange{0.1}{0.5}{\ms} less than the overall ignition delays,
+and are not shown on \cref{fig:simulation-comparison} because they are nearly indistinguishable from
+the overall ignition delay.
+\DIFdelbegin \DIFdel{While }\DIFdelend \DIFaddbegin 
+
+\begin{center}
+    \captionsetup{type=figure}
+    \includegraphics[width=\textwidth]{figures/constant-volume-comparison.pdf}
+    \caption{\DIFadd{Comparison of simulated ignition delays computed in an adiabatic, constant volume
+    system (dotted lines) and computed using the procedure described in
+    \mbox{%DIFAUXCMD
+\cref{sec:experimental-modeling} }\hspace{0pt}%DIFAUXCMD
+(solid lines). a) \mbox{%DIFAUXCMD
+\SI{15}{\bar}}\hspace{0pt}%DIFAUXCMD
+, b) \mbox{%DIFAUXCMD
+\SI{30}{\bar}}\hspace{0pt}%DIFAUXCMD
+.}}
+    \label{fig:conv-comparison}
+\end{center}
+
+\DIFadd{To further understand }\DIFaddend the model of \citet{Dievart2013}\DIFdelbegin \DIFdel{over-predicts the first-stage ignition delay, it also
+over-predicts the first-stage pressure rise, thereby leading to rapid overall ignition .
+}\DIFdelend \DIFaddbegin \DIFadd{, we have conducted adiabatic, constant volume
+simulations (called CONV simulations), as these simulations are not linked to a particular
+experiment by the volume trace and can be conducted over a wide range of temperatures.
+\mbox{%DIFAUXCMD
+\Cref{fig:conv-comparison} }\hspace{0pt}%DIFAUXCMD
+compares the CONV simulations to the RCM simulations shown in
+\mbox{%DIFAUXCMD
+\cref{fig:simulation-comparison}}\hspace{0pt}%DIFAUXCMD
+. From \mbox{%DIFAUXCMD
+\cref{fig:conv-comparison}}\hspace{0pt}%DIFAUXCMD
+, it can be seen that the curvature
+in the RCM simulations at $P_C = \SI{15}{\bar}$, $\phi =$ \mbox{%DIFAUXCMD
+\numlist{0.25;0.5} }\hspace{0pt}%DIFAUXCMD
+is related to the NTC
+region of the ignition delay, while the lack of curvature in the $P_C = \SI{15}{\bar}$, $\phi =
+\num{2.0}$ and the $P_C = \SI{30}{\bar}$, $\phi = \num{1.0}$ simulations is because those lie on the
+low-temperature side of the predicted NTC. It is clear from \mbox{%DIFAUXCMD
+\cref{fig:conv-comparison} }\hspace{0pt}%DIFAUXCMD
+that the
+model of \mbox{%DIFAUXCMD
+\citet{Dievart2013} }\hspace{0pt}%DIFAUXCMD
+predicts the NTC to occur at too high a temperature relative to the
+experiments.
+}\DIFaddend 
+
+To elucidate the underlying reasons for the disagreement between the \citet{Dievart2013} model and
+the data, we constructed an additional model using RMG (see
+\cref{sec:reaction-mechanism-generator}). As can be seen in \cref{fig:simulation-comparison}a, the
+agreement between the RMG model (dashed lines) and the experimental data is similar to the
+\citet{Dievart2013} model for the \SI{15}{\bar}, \(\phi =\) \numlist{0.25; 0.5} data. Moreover, the
+RMG model predicts a similar NTC region as temperature is decreasing. For the \SI{15}{\bar}, \(\phi =
+2.0\) data, the RMG model tends to over-predict the low-temperature ignition delays \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{(i.e., those to
+the right of the experimental NTC region on the Arrhenius plot), }\DIFaddend and does not predict the NTC region
+found experimentally. As before, the trend at \SI{30}{\bar}, \(\phi=1.0\) is similar to the
+\SI{15}{\bar}, \(\phi=2.0\) data; the RMG model over-predicts the low-temperature ignition delays
+and does not predict the experimental NTC region. Finally, as in the \citet{Dievart2013} model,
+two-stage ignition is predicted for all of the \(\phi=1.0\) and \(\phi=2.0\) data shown in
+\cref{fig:simulation-comparison}. However, the first-stage ignition delays are
+\SIrange{0.1}{0.5}{\ms} less than the overall ignition delays, and are not shown on
+\cref{fig:simulation-comparison} because they are nearly indistinguishable from the overall ignition
+delay.
+\DIFdelbegin \DIFdel{Again, the over-prediction of the first-stage ignition delay and pressure rise requires
+further investigation and understanding of the complex low-temperature chemistry.
+}\DIFdelend 
+
+It is clear that neither model is able to predict the ignition delays of MV particularly well. In
+addition to the poor agreement shown in \cref{fig:simulation-comparison}, the simulations for
+\(P_C = \SI{15}{\bar}\), \(\phi=1.0\) and \(P_C = \SI{30}{\bar}\), \(\phi=\) \numlist{0.25;0.5;2.0}
+showed substantial heat release during the compression stroke (i.e., the simulations are much too
+reactive), and so these conditions aren't compared in \cref{fig:simulation-comparison}. We note
+again that the model by \citet{Dievart2013} was validated for MV combustion only by comparison to
+flame extinction limits, so the disagreement is not wholly surprising.
+
+In general, there could be three likely sources of error in the models: missing reaction pathways,
+incorrect values of the reaction rates, and incorrect values for thermodynamic properties of the
+species. We have noted in \cref{sec:reaction-mechanism-generator} that the RMG model has many more
+reactions than the \citet{Dievart2013} model and the algorithm used in RMG considers a substantial
+number of the possible pathways. This reduces the possibility of missing reaction pathways affecting
+the model. Further detailed studies are required to ensure that the RMG model includes all of the
+relevant reaction pathways, which are outside the scope of this work.
+
+The second source of error may be incorrect reaction rate parameters, either because the rates are
+specified incorrectly in the model or because the rates are not well estimated by the
+typical analogy based-rules. It should be noted that errors of this type may affect the model
+generated by RMG---if the rates are not estimated correctly, reactions that are important in reality
+may not be included in the model. Determining the accuracy of the reaction rates used in the RMG and
+\citet{Dievart2013} models requires further detailed studies of the models, which are also outside
+the scope of this work. Another, related, source of error could be incorrect estimation of the
+pressure dependence of the reaction rates, which may be particularly important for the isomerization
+reactions prevalent in low-temperature chemistry.
+
+The third source of error may lie in the estimation of the thermodynamic properties of the species,
+particularly the fuel radicals. In the work of \citet{Dievart2013}, the program THERM
+\cite{Ritter1991} is used to estimate thermodynamic values using the group additivity method. In the
+RMG model constructed in this work, RMG itself estimates the thermodynamic properties of the
+molecules also using the group additivity method. Nonetheless, the two models have differing
+predictions of the thermodynamic properties of the species in the model, particularly the fuel and
+its radicals. The values of the heats of formation of the fuel and its \ce{H}-atom abstraction
+radicals are shown in \cref{tab:heat-of-formation}; the radicals are labeled according to the
+convention shown in \cref{fig:mv-structure}.
+
+\begin{center}
+    \captionsetup{type=figure}
+    \includegraphics[width=60mm]{figures/Methyl_pentanoate.png}
+    \caption{Structure of MV with carbon atoms labeled according to the convention used in
+    \cref{tab:heat-of-formation} and \cref{tab:mv-radicals}}
+    \label{fig:mv-structure}
+\end{center}
+
+\begin{center}
+    \captionsetup{type=table}
+    \caption{Heats of formation of MV and its radicals, labeled according to the convention used in
+    \cref{fig:mv-structure}}
+    \label{tab:heat-of-formation}
+    \begin{tabular}{cSSSS}
+        \toprule
+        \multirow{2}{*}{Radical Site} & \multicolumn{2}{c}{\citet{Dievart2013}} & \multicolumn{2}{c}{RMG Model (this work)} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        & {[\si{\kJ\per\mole}]} & {[\si{\kilo\calorie\per\mole}]} & {[\si{\kJ\per\mole}]} & {[\si{\kilo\calorie\per\mole}]} \\
+        \midrule
+        MV & -470.98 & -112.57 & -472.53 & -112.94 \\
+        2 & -297.16 & -71.02 & -273.63 & -65.40 \\
+        3 & -277.03 & -66.21 & -273.63 & -65.40 \\
+        4 & -277.03 & -66.21 & -278.61 & -66.59 \\
+        5 & -265.94 & -63.56 & -267.53 & -63.94 \\
+        M & -270.51 & -64.65 & -270.12 & -64.56 \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+\Cref{tab:heat-of-formation} shows that the heats of formation of the fuel and radicals 3, 4, 5, and
+M are quite similar between the two mechanisms. However, the heat of formation of the second
+radical, the one closest to the methyl ester group, has a significantly lower heat of formation in
+the model by \citet{Dievart2013} than in the RMG model. Note that it is expected that the second
+radical will be somewhat more stable than the other radicals, due to the influence of the methyl
+ester group on the adjacent carbon atom.
+
+This difference in heats of formation affects the pathways that consume the fuel. By conducting a
+reaction pathway analysis to determine which radicals are formed from the breakdown of the fuel, we
+can analyze the proportion of each radical formed as the fuel breaks down during the autoignition
+process. The following analysis is conducted for a constant volume, adiabatic simulation with
+initial temperature and pressure of \SI{700}{\K}, \SI{30}{\bar}, and for the stoichiometric
+equivalence ratio. The rates of production of the species have been integrated until the time of
+\SI{20}{\percent} fuel consumption. The results of this analysis are shown in \cref{tab:mv-radicals}
+for the two models. The percentages shown in \DIFdelbegin \DIFdel{the }\DIFdelend \cref{tab:mv-radicals} are the percent of the fuel
+consumed to form a particular fuel radical by all the reactions that can form that radical, and the
+radicals are labeled according to the convention in \cref{fig:mv-structure}.
+
+\begin{center}
+    \captionsetup{type=table}
+    \caption{Percent of MV consumed to form fuel radical species with a hydrogen atom missing at
+    the location indicated in the first column and \cref{fig:mv-structure}}
+    \label{tab:mv-radicals}
+    \begin{tabular}{cSSS}
+        \toprule
+        Radical Site & {\citet{Dievart2013} [\si{\percent}]} & {RMG Model [\si{\percent}]} & {RMG switched [\si{\percent}]}\\
+        \midrule
+        2 & 29.2 & 12.5 & 11.0 \\
+        3 & 17.5 & 12.2 & 11.1 \\
+        4 & 17.5 & 50.6 & 56.6 \\
+        5 & 9.5 & 3.9 & 4.3 \\
+        M & 26.3 & 20.8 & 16.9 \\
+        \bottomrule
+    \end{tabular}
+\end{center}
+
+At the relatively low temperature and high pressure condition of this analysis, all of the fuel is
+consumed by \ce{H}-atom abstractions to form the fuel radicals shown. It can be seen that the two
+models have quite different distributions of products from the first \ce{H}-abstraction reactions.
+The model of \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{Dievart2013} }\hspace{0pt}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\citet{Dievart2013} }\hspace{0pt}%DIFAUXCMD
+}\DIFaddend predicts that \ce{H}-abstraction from the second carbon is the most
+prevalent, while the RMG model predicts that the radical on the fourth carbon in the chain will be
+primarily formed. This is in line with the heats of formation in \cref{tab:heat-of-formation}, where
+the most stable radical (i.e., the radical with the smallest heat of formation) is most likely to be
+formed in each model.
+
+To further compare the models with each other, the NASA polynomials representing the thermodynamic
+properties of MV and the 5 fuel radicals from the model of \citet{Dievart2013} and are used to
+replace the equivalent molecules in the RMG model. The results of a path analysis at the same
+condition as the other analysis is shown in \cref{tab:mv-radicals} in the ``RMG switched'' column.
+\DIFdelbegin \DIFdel{This analysis shows }\DIFdelend \DIFaddbegin \DIFadd{The results of the analysis of the ``RMG switched'' model show }\DIFaddend that the radical on the fourth carbon
+\DIFdelbegin \DIFdel{atom }\DIFdelend is still the most \DIFdelbegin \DIFdel{prevalant, despite changing }\DIFdelend \DIFaddbegin \DIFadd{prevalent, despite }\DIFaddend the heats of formation \DIFdelbegin \DIFdel{of the fuel and its radicals .
+}\DIFdelend \DIFaddbegin \DIFadd{for the radicals in the ``RMG switched''
+model being identical to the \mbox{%DIFAUXCMD
+\citet{Dievart2013} }\hspace{0pt}%DIFAUXCMD
+model. This suggests that the reaction pathways
+have a substantial impact on the simulation, in addition to the influence of the thermochemistry, as
+discussed previously. Moreover, since the thermochemistry of the species in a reaction controls the
+reverse reaction rate of a reaction, the RMG algorithm may miss important pathways due to improperly
+estimated thermochemistry.
+}\DIFaddend 
+
+Taken together, these results show that the poor performance in a given model cannot be attributed
+to a single source. \DIFdelbegin \DIFdel{There is a strong interaction between the thermodynamics of the species and the
+kinetics of the reactions, requiring }\DIFdelend \DIFaddbegin \DIFadd{Separating the influence of thermochemistry and kinetics requires }\DIFaddend further
+detailed study of the methyl \DIFdelbegin \DIFdel{ester system }\DIFdelend \DIFaddbegin \DIFadd{valerate system specifically, and methyl ester systems more generally.
+Although such detailed work has begun, for example, with the work of \mbox{%DIFAUXCMD
+\citet{Hayes2009}}\hspace{0pt}%DIFAUXCMD
+, further work
+is required }\DIFaddend to accurately predict the low temperature ignition delays of methyl valerate.
+
+\section{Conclusions}\label{sec:conclusions}
+
+In this study, we have measured ignition delays for methyl valerate over a wide range of
+engine-relevant pressures, temperatures, and equivalence ratios. An NTC region of the ignition delay
+and two-stage ignition are recorded for pressures of \SI{15}{\bar} at \(\phi=2.0\) and \SI{30}{\bar}
+at \(\phi=1.0\). A detailed chemical kinetic model available in the literature is unable to
+reproduce the experimental results, so a new model is constructed using the Reaction Mechanism
+Generator software. Although the new model contains many more reactions than the literature model,
+it is still unable to predict the experimental ignition delays satisfactorily. Both models predict
+an NTC region of the ignition delay under conditions where none is found in the experiments, and
+fail to predict the NTC region of ignition delay that is present in the experiments. Possible
+reasons for the discrepancy include missing reaction pathways, incorrect rate estimates, and
+incorrect thermodynamic property estimates. Comparative analysis of the two models failed to
+identify a single source of the error, and further detailed studies are required to improve
+predictions of the ignition delay at these engine-relevant conditions.
+
+\section{Acknowledgments}\label{sec:acknowledgments}
+
+The authors acknowledge support from the Combustion Energy Frontier Research Center, an Energy
+Frontier Research Center funded by the U.S. Department of Energy, Office of Science, Office of Basic
+Energy Sciences, under award number DE-SC0001198.
+
+\section*{References}
+\bibliography{methyl-valerate}
+
+\end{document}

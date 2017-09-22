@@ -1,0 +1,10 @@
+# Vapor pressure data from Aad C.G. van Genderen, J.Cees van Miltenburg, Jacobus G. Blok, Mark J. van Bommel, Paul J. van Ekeren, Gerrit J.K. van den Berg, and Harry A.J. Oonk. "Liquid-vapour Equilibria of the Methyl Esters of Alkanoic Acids: Vapour Pressures as a Function of Temperature and Standard Thermodynamic Function Changes." Fluid Phase Equilibria 202, no. 1 (October 2002): 109-120. doi:10.1016/S0378-3812(02)00097-3.
+#
+# Temperature (K), Vapor Pressure (kPa)
+293.34,1.044
+297.75,1.361
+308.05,2.446
+312.9,3.174
+318.03,4.134
+322.47,5.155
+328.02,6.726
