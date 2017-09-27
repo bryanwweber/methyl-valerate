@@ -81,13 +81,13 @@ In the attached marked revision, deleted text is marked in red and added text is
     %
     We agree with the reviewer that it is possible that MV will not be a good surrogate for
     biodiesel. Nonetheless, to our knowledge, there has been no study to suggest that it is not a
-    good surrogate, probably because very few studies of MV have been conducted, so there is not
-    enough information to judge. However, we think that judging the suitability (or lack thereof)
-    for MV as a surrogate of biodiesel is outside the scope of this work, so we are simply noting
-    that this study provides part of the necessary experimental information so that others may judge
-    for themselves. We also agree with the reviewer that the scope of this work is actually wider
-    than we had noted previously, so we have added a note that this study provides further
-    information on the autoignition chemistry of large methyl esters near line 41:
+    good surrogate, probably because very few studies of MV have been conducted to date, so there is
+    not enough information to judge. However, we think that judging the suitability (or lack
+    thereof) for MV as a surrogate of biodiesel is outside the scope of this work, so we are simply
+    noting that this study provides part of the necessary experimental information so that others
+    may judge for themselves. We also agree with the reviewer that the scope of this work is
+    actually wider than we had noted previously, so we have added a note that this study provides
+    further information on the autoignition chemistry of large methyl esters near line 41:
 
     \begin{quote}
         %
@@ -125,14 +125,14 @@ In the attached marked revision, deleted text is marked in red and added text is
 \begin{response}
     %
     The reason for this is because of physical limitations of the experimental apparatus and the
-    fuel. In particular, achieving sufficiently low temperatures on our apparatus requires
+    fuel. In particular, achieving sufficiently EOC low temperatures on our apparatus would require
     increasing the reaction chamber volume at the end of compression, which in turn requires
     substantially higher initial pressures to reach the EOC pressure of \SI{30}{\bar}. The initial
     pressure in the RCM reaction chamber is limited by the pressure in the mixing tank, and the
     total pressure in the mixing tank is limited by the vapor pressure of MV at the preheat
     temperature. The combination of these factors meant that we could not prepare a mixture with
     sufficiently high tank pressure to enable repeated experiments with the EOC volume required to
-    reach temperatures where the ignition delay would be measurable. However, we feel that this
+    reach EOC temperatures where the ignition delay would be measurable. However, we feel that this
     explanation would only confuse the manuscript, so we omit it.
     %
 \end{response}
@@ -181,7 +181,8 @@ In the attached marked revision, deleted text is marked in red and added text is
     temperature side of the NTC, while the $P_C = \SI{15}{\bar}$, $\phi =$ \numlist{0.25;0.50}
     simulated ignition delays are on the high-temperature side of the NTC, but approaching the NTC
     range such that they start to assume the characteristic curvature as the temperature decreases.
-    In addition to the figure, we have added some text near line 290 to clarify this point.
+    In addition to the figure, we have added some paragraphs near line 293 to clarify this point,
+    but we have not copied the added text here to save space.
     %
 \end{response}
 
@@ -233,7 +234,7 @@ In the attached marked revision, deleted text is marked in red and added text is
 \begin{response}
     %
     In this context, we are defining low temperature ignition delays as those to the right of the
-    experimental NTC region on the Arrhenius plot. We have added the following text near line 308:
+    experimental NTC region on the Arrhenius plot. We have added the following text near line 319:
 
     \begin{quote}
         %
@@ -280,9 +281,9 @@ In the attached marked revision, deleted text is marked in red and added text is
     easily be disentangled from each other, requiring a thorough, detailed investigation of the
     methyl valerate reaction system which we consider outside the scope of the present work. In
     addition, we have noted that improper prediction of the thermochemistry of species may affect
-    the RMG model in particular, due to the rate-based algorithm used in RMG, which may miss
-    important reactions if the thermochemistry is not accurate. We have modified the text beginning
-    near line 394, but do not copy the modification here for space.
+    the RMG-generated model in particular due to the rate-based algorithm used in RMG, which may
+    miss important reactions if the thermochemistry is not accurate. We have modified the text
+    beginning near line 402, but do not copy the modification here for space.
     %
 \end{response}
 
@@ -300,23 +301,21 @@ In the attached marked revision, deleted text is marked in red and added text is
     We feel that the poor performance of both mechanisms indicates that a thorough and detailed
     study of the entire methyl valerate system is warranted, and small modifications, such as the
     replacement of only a few rates related to low-temperature chemistry, will not be sufficient to
-    significantly improve the performance of the model. In addition, we feel that such ad-hoc
-    replacement of rates without detailed study, even if it should improve the performance, could
-    not be shown to be anything more than fortuitous without further study, which is outside the
-    scope of the present work. Finally, in a separate work, Di\'{e}vart et al. (Combustion and
-    Flame, 159 (5) 1793--1805, 2012) note that ``preliminary tests with up-to-date kinetic
-    parameters [including the work of Hayes and Burgess] for the generic low temperature scheme have
-    shown an enhancement of the fuel reactivity at the end of the NTC region.'' Since the model
-    already over-predicts the reactivity of the RCM data, particularly at the end of the NTC region,
-    further enhancement is not likely to improve agreement.
+    significantly improve the performance of the model. Moreover, we feel that such ad-hoc
+    replacement of rates, even if the performance improves, could not be shown to be anything more
+    than fortuitous without further detailed study, which is outside the scope of the present work.
+    Finally, in a separate work, Di\'{e}vart et al. (Combustion and Flame, 159 (5) 1793--1805, 2012)
+    note that ``preliminary tests with up-to-date kinetic parameters [including the work of Hayes
+    and Burgess] for the generic low temperature scheme have shown an enhancement of the fuel
+    reactivity at the end of the NTC region.'' Since the model already over-predicts the reactivity
+    of the RCM data, particularly at the end of the NTC region, further enhancement is not likely to
+    improve agreement.
 
     Therefore, we have not included these modifications in the manuscript; we have, however, added a
-    note to the end of the discussion that references the work of \citet{Hayes2009} to indicate that
-    some of the necessary detailed work has been started.
+    note to the end of the discussion (near line 418) that references the work of \citet{Hayes2009}
+    to indicate that some of the necessary detailed work has been started.
     %
 \end{response}
-
-\newpage
 
 \noindent \textbf{Reviewer \#2:}
 
@@ -356,7 +355,7 @@ In the attached marked revision, deleted text is marked in red and added text is
     All of these studies determined that the vaporization procedure used on this apparatus is
     sufficient to produce a homogeneous mixture of fuel and oxidizer, even for fuels with relatively
     low vapor pressures. We have added references to these prior studies in the present manuscript
-    near line 105:
+    near line 110:
 
     \begin{quote}
         %
